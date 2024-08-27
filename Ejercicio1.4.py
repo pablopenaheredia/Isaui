@@ -7,21 +7,21 @@ class Contador:
         self.contador = 0
 
         self.etiqueta = tk.Label(self.raiz, text="Contador")
-        self.etiqueta.pack()
+        self.etiqueta.grid(row=0, column=0, padx=5, pady=5)
 
         self.entry = tk.Entry(self.raiz, width=10)
         self.entry.insert(0, "0")
         self.entry.config(state="readonly")
-        self.entry.pack()
+        self.entry.grid(row=0, column=1, padx=5, pady=5)
 
         self.boton_up = tk.Button(self.raiz, text="Count Up", command=self.incrementar)
-        self.boton_up.pack()
+        self.boton_up.grid(row=0, column=2, padx=5, pady=5)
 
         self.boton_down = tk.Button(self.raiz, text="Count Down", command=self.decrementar)
-        self.boton_down.pack()
+        self.boton_down.grid(row=0, column=3, padx=5, pady=5)
 
         self.boton_reset = tk.Button(self.raiz, text="Reset", command=self.reset)
-        self.boton_reset.pack()
+        self.boton_reset.grid(row=0, column=4, padx=5, pady=5)
 
         self.raiz.mainloop()
 
@@ -48,4 +48,3 @@ class Contador:
 
 if __name__ == "__main__":
     Contador()
-        
