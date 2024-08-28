@@ -45,28 +45,43 @@ class Calculadora:
         self.ventana.mainloop()
 
     def operacion(self, operador):
-        try:
-            num1 = float(self.entry_num1.get())
-            num2 = float(self.entry_num2.get())
-            if operador == "+":
-                resultado = num1 + num2
-            elif operador == "-":
-                resultado = num1 - num2
-            elif operador == "*":
-                resultado = num1 * num2
-            elif operador == "/":
-                resultado = num1 / num2
-            elif operador == "%":
-                resultado = num1 % num2
+        num1 = self.entry_num1.get()
+        num2 = self.entry_num2.get()
+        
+        if not num1 or not num2:
+            if not num1 and not num2:
+                mensaje_error = "Debe ingresar ambos números"
+            elif not num1:
+                mensaje_error = "No ingresaste número 1"
+            else:
+                mensaje_error = "No ingresaste número 2"
             self.entry_resultado.config(state="normal")
             self.entry_resultado.delete(0, tk.END)
-            self.entry_resultado.insert(0, str(resultado))
+            self.entry_resultado.insert(0, mensaje_error)
             self.entry_resultado.config(state="readonly")
-        except ValueError:
-            self.entry_resultado.config(state="normal")
-            self.entry_resultado.delete(0, tk.END)
-            self.entry_resultado.insert(0, "Error")
-            self.entry_resultado.config(state="readonly")
+        else:
+            try:
+                num1 = float(num1)
+                num2 = float(num2)
+                if operador == "+":
+                    resultado = num1 + num2
+                elif operador == "-":
+                    resultado = num1 - num2
+                elif operador == "*":
+                    resultado = num1 * num2
+                elif operador == "/":
+                    resultado = num1 / num2
+                elif operador == "%":
+                    resultado = num1 % num2
+                self.entry_resultado.config(state="normal")
+                self.entry_resultado.delete(0, tk.END)
+                self.entry_resultado.insert(0, str(resultado))
+                self.entry_resultado.config(state="readonly")
+            except ValueError:
+                self.entry_resultado.config(state="normal")
+                self.entry_resultado.delete(0, tk.END)
+                self.entry_resultado.insert(0, "Error")
+                self.entry_resultado.config(state="readonly")
 
     def reset(self):
         self.entry_num1.delete(0, tk.END)
