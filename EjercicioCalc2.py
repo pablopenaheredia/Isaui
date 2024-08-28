@@ -2,11 +2,11 @@ import tkinter as tk
 
 class Calculadora2:
     def __init__(self):
-        self.raiz = tk.Tk()
-        self.raiz.title("Calculadora 2")
+        self.ventana = tk.Tk()
+        self.ventana.title("Calculadora 2")
 
         # Columna 1
-        self.frame_izquierda = tk.Frame(self.raiz)
+        self.frame_izquierda = tk.Frame(self.ventana)
         self.frame_izquierda.grid(row=0, column=0, padx=10, pady=10)
 
         self.etiqueta_valor1 = tk.Label(self.frame_izquierda, text="Valor 1")
@@ -19,7 +19,7 @@ class Calculadora2:
         self.etiqueta_resultado.grid(row=2, column=0, padx=5, pady=5)
 
         # Columna 2
-        self.frame_centro = tk.Frame(self.raiz)
+        self.frame_centro = tk.Frame(self.ventana)
         self.frame_centro.grid(row=0, column=1, padx=10, pady=10)
 
         self.entry_valor1 = tk.Entry(self.frame_centro, width=10)
@@ -33,7 +33,7 @@ class Calculadora2:
         self.entry_resultado.grid(row=2, column=0, padx=5, pady=5)
 
         # Columna 3
-        self.frame_derecha = tk.Frame(self.raiz)
+        self.frame_derecha = tk.Frame(self.ventana)
         self.frame_derecha.grid(row=0, column=2, padx=10, pady=10)
 
         self.etiqueta_operacion = tk.Label(self.frame_derecha, text="Operaciones")
@@ -55,10 +55,10 @@ class Calculadora2:
         self.radiobutton_dividir.grid(row=4, column=0, padx=5, pady=5)
 
         # Botón calcular
-        self.boton_calcular = tk.Button(self.raiz, text="Calcular", command=self.calcular)
+        self.boton_calcular = tk.Button(self.ventana, text="Calcular", command=self.calcular)
         self.boton_calcular.grid(row=1, column=0, columnspan=3, padx=10, pady=10)
 
-        self.raiz.mainloop()
+        self.ventana.mainloop()
 
     def calcular(self):
         try:
