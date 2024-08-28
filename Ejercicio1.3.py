@@ -2,30 +2,30 @@ import tkinter as tk
 
 class Factorial:
     def __init__(self):
-        self.raiz = tk.Tk()
-        self.raiz.title("Factorial")
+        self.ventana = tk.Tk()
+        self.ventana.title("Factorial")
         self.n = 2
 
-        self.etiqueta_n = tk.Label(self.raiz, text="n")
+        self.etiqueta_n = tk.Label(self.ventana, text="n")
         self.etiqueta_n.grid(row=0, column=0, padx=5, pady=5)
 
-        self.etiqueta_factorial = tk.Label(self.raiz, text="Factorial(n)")
+        self.etiqueta_factorial = tk.Label(self.ventana, text="Factorial(n)")
         self.etiqueta_factorial.grid(row=0, column=2, padx=5, pady=5)
 
-        self.entry_n = tk.Entry(self.raiz, width=10)
+        self.entry_n = tk.Entry(self.ventana, width=10)
         self.entry_n.insert(0, "2")
         self.entry_n.config(state="readonly")
         self.entry_n.grid(row=0, column=1, padx=5, pady=5)
 
-        self.entry_factorial = tk.Entry(self.raiz, width=10)
+        self.entry_factorial = tk.Entry(self.ventana, width=10)
         self.entry_factorial.insert(0, "2")
         self.entry_factorial.config(state="readonly")
         self.entry_factorial.grid(row=0, column=3, padx=5, pady=5)
 
-        self.boton = tk.Button(self.raiz, text="Siguiente", command=self.siguiente)
+        self.boton = tk.Button(self.ventana, text="Siguiente", command=self.siguiente)
         self.boton.grid(row=1, column=0, columnspan=4, padx=5, pady=5)
 
-        self.raiz.mainloop()
+        self.ventana.mainloop()
 
     def siguiente(self):
         self.n += 1
