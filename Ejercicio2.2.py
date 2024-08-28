@@ -2,11 +2,11 @@ import tkinter as tk
 
 class Peliculas:
     def __init__(self):
-        self.raiz = tk.Tk()
-        self.raiz.title("Películas")
+        self.ventana = tk.Tk()
+        self.ventana.title("Películas")
 
         # Columna 1
-        self.frame_izquierda = tk.Frame(self.raiz)
+        self.frame_izquierda = tk.Frame(self.ventana)
         self.frame_izquierda.grid(row=0, column=0, padx=10, pady=10)
 
         self.etiqueta_titulo = tk.Label(self.frame_izquierda, text="Escribe el título de una película")
@@ -19,7 +19,7 @@ class Peliculas:
         self.boton_anadir.grid(row=2, column=0, padx=5, pady=5)
 
         # Columna 2
-        self.frame_derecha = tk.Frame(self.raiz)
+        self.frame_derecha = tk.Frame(self.ventana)
         self.frame_derecha.grid(row=0, column=1, padx=10, pady=10)
 
         self.etiqueta_peliculas = tk.Label(self.frame_derecha, text="Películas")
@@ -28,7 +28,7 @@ class Peliculas:
         self.listbox_peliculas = tk.Listbox(self.frame_derecha, width=20)
         self.listbox_peliculas.grid(row=1, column=0, padx=5, pady=5)
 
-        self.raiz.mainloop()
+        self.ventana.mainloop()
 
     def anadir_pelicula(self):
         titulo = self.entry_titulo.get()
