@@ -42,6 +42,11 @@ class GeneradorNumeros:
     def generar_numero(self):
         num1 = int(self.spinbox_num1.get())
         num2 = int(self.spinbox_num2.get())
+    
+        # para que num 1 sea menor o igual a num2
+        if num1 > num2:
+            num1, num2 = num2, num1  
+    
         numero_generado = random.randint(num1, num2)
         self.entry_generado.config(state="normal")
         self.entry_generado.delete(0, tk.END)
