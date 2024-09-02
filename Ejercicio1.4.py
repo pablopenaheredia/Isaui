@@ -6,8 +6,8 @@ class Contador:
         self.ventana.title("Contador")
         self.contador = 0
 
-        self.etiqueta = tk.Label(self.ventana, text="Contador")
-        self.etiqueta.grid(row=0, column=0, padx=5, pady=5)
+        self.titulo = tk.Label(self.ventana, text="Contador")
+        self.titulo.grid(row=0, column=0, padx=5, pady=5)
 
         self.entry = tk.Entry(self.ventana, width=10)
         self.entry.insert(0, "0")
