@@ -5,20 +5,20 @@ class Calculadora:
         self.ventana = tk.Tk()
         self.ventana.title("Calculadora")
 
-        self.etiqueta_num1 = tk.Label(self.ventana, text="Primer número")
-        self.etiqueta_num1.grid(row=0, column=0, padx=5, pady=5)
+        self.label_num1 = tk.Label(self.ventana, text="Primer número")
+        self.label_num1.grid(row=0, column=0, padx=5, pady=5)
 
         self.entry_num1 = tk.Entry(self.ventana, width=20)
         self.entry_num1.grid(row=0, column=1, padx=5, pady=5)
 
-        self.etiqueta_num2 = tk.Label(self.ventana, text="Segundo número")
-        self.etiqueta_num2.grid(row=1, column=0, padx=5, pady=5)
+        self.label_num2 = tk.Label(self.ventana, text="Segundo número")
+        self.label_num2.grid(row=1, column=0, padx=5, pady=5)
 
         self.entry_num2 = tk.Entry(self.ventana, width=20)
         self.entry_num2.grid(row=1, column=1, padx=5, pady=5)
 
-        self.etiqueta_resultado = tk.Label(self.ventana, text="Resultado")
-        self.etiqueta_resultado.grid(row=2, column=0, padx=5, pady=5)
+        self.label_resultado = tk.Label(self.ventana, text="Resultado")
+        self.label_resultado.grid(row=2, column=0, padx=5, pady=5)
 
         self.entry_resultado = tk.Entry(self.ventana, width=20)
         self.entry_resultado.config(state="readonly")
@@ -52,9 +52,9 @@ class Calculadora:
             if not num1 and not num2:
                 mensaje_error = "Debe ingresar ambos números"
             elif not num1:
-                mensaje_error = "No ingresaste número 1"
+                mensaje_error = "No ingresaste el primer número"
             else:
-                mensaje_error = "No ingresaste número 2"
+                mensaje_error = "No ingresaste número el segundo número"
             self.entry_resultado.config(state="normal")
             self.entry_resultado.delete(0, tk.END)
             self.entry_resultado.insert(0, mensaje_error)
