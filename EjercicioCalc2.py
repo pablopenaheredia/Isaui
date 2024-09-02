@@ -9,14 +9,14 @@ class Calculadora2:
         self.frame_izquierda = tk.Frame(self.ventana)
         self.frame_izquierda.grid(row=0, column=0, padx=10, pady=10)
 
-        self.etiqueta_valor1 = tk.Label(self.frame_izquierda, text="Valor 1")
-        self.etiqueta_valor1.grid(row=0, column=0, padx=5, pady=5)
+        self.label_valor1 = tk.Label(self.frame_izquierda, text="Valor 1")
+        self.label_valor1.grid(row=0, column=0, padx=5, pady=5)
 
-        self.etiqueta_valor2 = tk.Label(self.frame_izquierda, text="Valor 2")
-        self.etiqueta_valor2.grid(row=1, column=0, padx=5, pady=5)
+        self.label_valor2 = tk.Label(self.frame_izquierda, text="Valor 2")
+        self.label_valor2.grid(row=1, column=0, padx=5, pady=5)
 
-        self.etiqueta_resultado = tk.Label(self.frame_izquierda, text="Resultado")
-        self.etiqueta_resultado.grid(row=2, column=0, padx=5, pady=5)
+        self.label_resultado = tk.Label(self.frame_izquierda, text="Resultado")
+        self.label_resultado.grid(row=2, column=0, padx=5, pady=5)
 
         # Columna 2
         self.frame_centro = tk.Frame(self.ventana)
@@ -36,8 +36,8 @@ class Calculadora2:
         self.frame_derecha = tk.Frame(self.ventana)
         self.frame_derecha.grid(row=0, column=2, padx=10, pady=10)
 
-        self.etiqueta_operacion = tk.Label(self.frame_derecha, text="Operaciones")
-        self.etiqueta_operacion.grid(row=0, column=0, padx=5, pady=5)
+        self.label_operacion = tk.Label(self.frame_derecha, text="Operaciones")
+        self.label_operacion.grid(row=0, column=0, padx=5, pady=5)
 
         self.valor_operacion = tk.StringVar()
         self.valor_operacion.set("Sumar")
