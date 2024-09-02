@@ -9,8 +9,8 @@ class Peliculas:
         self.panel_entrada = tk.Frame(self.ventana)
         self.panel_entrada.grid(row=0, column=0, padx=10, pady=10)
 
-        self.etiqueta_titulo = tk.Label(self.panel_entrada, text="Escribe el título de una película")
-        self.etiqueta_titulo.grid(row=0, column=0, padx=5, pady=5)
+        self.label_titulo = tk.Label(self.panel_entrada, text="Escribe el título de una película")
+        self.label_titulo.grid(row=0, column=0, padx=5, pady=5)
 
         self.entry_titulo = tk.Entry(self.panel_entrada, width=20)
         self.entry_titulo.grid(row=1, column=0, padx=5, pady=5)
@@ -31,12 +31,17 @@ class Peliculas:
         self.ventana.mainloop()
 
     def anadir_pelicula(self):
-        titulo = self.entry_titulo.get().strip()  # Eliminar espacios en blanco al principio y al final
-        if titulo:  # Verificar que el título no esté vacío
-            self.listbox_peliculas.insert(tk.END, titulo)
-            self.entry_titulo.delete(0, tk.END)
+        titulo = self.entry_titulo.get().strip()
+        if titulo:  # verificar que el titulo no este vacio
+            if titulo not in self.listbox_peliculas.get(0, tk.END):  # verificar que el titulo no este ya en la lista
+                self.listbox_peliculas.insert(tk.END, titulo)
+                self.entry_titulo.delete(0, tk.END)
+            else:
+                #titulo ya existe
+                self.entry_titulo.delete(0, tk.END)
+                self.entry_titulo.insert(0, "Error: Título ya existe")
         else:
-            # Mostrar un mensaje de error si el título está vacío
+            #titulo vacio
             self.entry_titulo.delete(0, tk.END)
             self.entry_titulo.insert(0, "Error: Título vacío")
 
