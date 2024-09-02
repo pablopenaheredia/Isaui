@@ -6,18 +6,17 @@ class ContCreciente:
         self.ventana.title("Contador Creciente")
         self.contador = 0
 
-        # Creamos los widgets
+        # widgets
         self.label = tk.Label(self.ventana, text="Contador")
         self.entry = tk.Entry(self.ventana, width=10)
         self.entry.insert(0, "0")
         self.entry.config(state="readonly")
         self.boton_sumar = tk.Button(self.ventana, text="+", command=self.incrementar)
 
-        # Los colocamos en la ventana utilizando grid
+        # estructura
         self.titulo.grid(row=0, column=0, padx=5, pady=5)
         self.entry.grid(row=0, column=1, padx=5, pady=5)
         self.boton_sumar.grid(row=0, column=2, padx=5, pady=5)
-
         self.ventana.mainloop()
 
     def incrementar(self):
