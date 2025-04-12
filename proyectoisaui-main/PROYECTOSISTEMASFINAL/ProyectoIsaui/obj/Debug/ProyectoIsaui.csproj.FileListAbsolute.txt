@@ -1,0 +1,88 @@
+D:\ISAUI\ISAUI 2023\PROGRAMACION\ProyectoIsaui\ProyectoIsaui\bin\Debug\ProyectoIsaui.exe.config
+D:\ISAUI\ISAUI 2023\PROGRAMACION\ProyectoIsaui\ProyectoIsaui\bin\Debug\ProyectoIsaui.exe
+D:\ISAUI\ISAUI 2023\PROGRAMACION\ProyectoIsaui\ProyectoIsaui\bin\Debug\ProyectoIsaui.pdb
+D:\ISAUI\ISAUI 2023\PROGRAMACION\ProyectoIsaui\ProyectoIsaui\bin\Debug\MySql.Data.dll
+D:\ISAUI\ISAUI 2023\PROGRAMACION\ProyectoIsaui\ProyectoIsaui\bin\Debug\Google.Protobuf.dll
+D:\ISAUI\ISAUI 2023\PROGRAMACION\ProyectoIsaui\ProyectoIsaui\bin\Debug\Zstandard.Net.dll
+D:\ISAUI\ISAUI 2023\PROGRAMACION\ProyectoIsaui\ProyectoIsaui\bin\Debug\K4os.Compression.LZ4.Streams.dll
+D:\ISAUI\ISAUI 2023\PROGRAMACION\ProyectoIsaui\ProyectoIsaui\bin\Debug\BouncyCastle.Crypto.dll
+D:\ISAUI\ISAUI 2023\PROGRAMACION\ProyectoIsaui\ProyectoIsaui\bin\Debug\Ubiety.Dns.Core.dll
+D:\ISAUI\ISAUI 2023\PROGRAMACION\ProyectoIsaui\ProyectoIsaui\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\ISAUI\ISAUI 2023\PROGRAMACION\ProyectoIsaui\ProyectoIsaui\bin\Debug\System.Buffers.dll
+D:\ISAUI\ISAUI 2023\PROGRAMACION\ProyectoIsaui\ProyectoIsaui\bin\Debug\K4os.Compression.LZ4.dll
+D:\ISAUI\ISAUI 2023\PROGRAMACION\ProyectoIsaui\ProyectoIsaui\bin\Debug\K4os.Hash.xxHash.dll
+D:\ISAUI\ISAUI 2023\PROGRAMACION\ProyectoIsaui\ProyectoIsaui\bin\Debug\MySql.Data.xml
+D:\ISAUI\ISAUI 2023\PROGRAMACION\ProyectoIsaui\ProyectoIsaui\obj\Debug\ProyectoIsaui.csprojResolveAssemblyReference.cache
+D:\ISAUI\ISAUI 2023\PROGRAMACION\ProyectoIsaui\ProyectoIsaui\obj\Debug\ProyectoIsaui.Form1.resources
+D:\ISAUI\ISAUI 2023\PROGRAMACION\ProyectoIsaui\ProyectoIsaui\obj\Debug\ProyectoIsaui.Properties.Resources.resources
+D:\ISAUI\ISAUI 2023\PROGRAMACION\ProyectoIsaui\ProyectoIsaui\obj\Debug\ProyectoIsaui.csproj.GenerateResource.Cache
+D:\ISAUI\ISAUI 2023\PROGRAMACION\ProyectoIsaui\ProyectoIsaui\obj\Debug\ProyectoIsaui.exe
+D:\ISAUI\ISAUI 2023\PROGRAMACION\ProyectoIsaui\ProyectoIsaui\obj\Debug\ProyectoIsaui.pdb
+D:\ISAUI\ISAUI 2023\PROGRAMACION\ProyectoIsaui\ProyectoIsaui\obj\Debug\ProyectoIsaui.FrmBase.resources
+D:\ISAUI\ISAUI 2023\PROGRAMACION\ProyectoIsaui\ProyectoIsaui\obj\Debug\ProyectoIsaui.FrmProducto.resources
+D:\ISAUI\ISAUI 2023\PROGRAMACION\ProyectoIsaui\ProyectoIsaui\obj\Debug\ProyectoIsaui.FrmConsultaProducto.resources
+C:\Users\evepa\OneDrive\Escritorio\ProyectoIsaui\ProyectoIsaui\bin\Debug\ProyectoIsaui.exe.config
+C:\Users\evepa\OneDrive\Escritorio\ProyectoIsaui\ProyectoIsaui\bin\Debug\ProyectoIsaui.exe
+C:\Users\evepa\OneDrive\Escritorio\ProyectoIsaui\ProyectoIsaui\bin\Debug\ProyectoIsaui.pdb
+C:\Users\evepa\OneDrive\Escritorio\ProyectoIsaui\ProyectoIsaui\bin\Debug\MySql.Data.dll
+C:\Users\evepa\OneDrive\Escritorio\ProyectoIsaui\ProyectoIsaui\bin\Debug\Google.Protobuf.dll
+C:\Users\evepa\OneDrive\Escritorio\ProyectoIsaui\ProyectoIsaui\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\evepa\OneDrive\Escritorio\ProyectoIsaui\ProyectoIsaui\bin\Debug\Ubiety.Dns.Core.dll
+C:\Users\evepa\OneDrive\Escritorio\ProyectoIsaui\ProyectoIsaui\bin\Debug\Renci.SshNet.dll
+C:\Users\evepa\OneDrive\Escritorio\ProyectoIsaui\ProyectoIsaui\bin\Debug\MySql.Data.xml
+C:\Users\evepa\OneDrive\Escritorio\ProyectoIsaui\ProyectoIsaui\obj\Debug\ProyectoIsaui.csproj.AssemblyReference.cache
+C:\Users\evepa\OneDrive\Escritorio\ProyectoIsaui\ProyectoIsaui\obj\Debug\ProyectoIsaui.Form1.resources
+C:\Users\evepa\OneDrive\Escritorio\ProyectoIsaui\ProyectoIsaui\obj\Debug\ProyectoIsaui.FrmBase.resources
+C:\Users\evepa\OneDrive\Escritorio\ProyectoIsaui\ProyectoIsaui\obj\Debug\ProyectoIsaui.FrmConsultaProducto.resources
+C:\Users\evepa\OneDrive\Escritorio\ProyectoIsaui\ProyectoIsaui\obj\Debug\ProyectoIsaui.FrmProducto.resources
+C:\Users\evepa\OneDrive\Escritorio\ProyectoIsaui\ProyectoIsaui\obj\Debug\ProyectoIsaui.Properties.Resources.resources
+C:\Users\evepa\OneDrive\Escritorio\ProyectoIsaui\ProyectoIsaui\obj\Debug\ProyectoIsaui.csproj.GenerateResource.cache
+C:\Users\evepa\OneDrive\Escritorio\ProyectoIsaui\ProyectoIsaui\obj\Debug\ProyectoIsaui.csproj.CoreCompileInputs.cache
+C:\Users\evepa\OneDrive\Escritorio\ProyectoIsaui\ProyectoIsaui\obj\Debug\ProyectoIsaui.csproj.CopyComplete
+C:\Users\evepa\OneDrive\Escritorio\ProyectoIsaui\ProyectoIsaui\obj\Debug\ProyectoIsaui.exe
+C:\Users\evepa\OneDrive\Escritorio\ProyectoIsaui\ProyectoIsaui\obj\Debug\ProyectoIsaui.pdb
+C:\Users\evepa\OneDrive\Escritorio\ProyectoIsaui\ProyectoIsaui\obj\Debug\ProyectoIsaui.FrmCliente.resources
+C:\Users\evepa\OneDrive\Escritorio\ProyectoIsaui\ProyectoIsaui\obj\Debug\ProyectoIsaui.FrmPrincipal.resources
+C:\Users\lauta\OneDrive\Desktop\PROYECTOSISTEMASFINAL\ProyectoIsaui\obj\Debug\ProyectoIsaui.csproj.AssemblyReference.cache
+C:\Users\lauta\OneDrive\Desktop\PROYECTOSISTEMASFINAL\ProyectoIsaui\obj\Debug\ProyectoIsaui.csproj.SuggestedBindingRedirects.cache
+C:\Users\lauta\OneDrive\Desktop\PROYECTOSISTEMASFINAL\ProyectoIsaui\obj\Debug\ProyectoIsaui.Form1.resources
+C:\Users\lauta\OneDrive\Desktop\PROYECTOSISTEMASFINAL\ProyectoIsaui\obj\Debug\ProyectoIsaui.FrmBase.resources
+C:\Users\lauta\OneDrive\Desktop\PROYECTOSISTEMASFINAL\ProyectoIsaui\obj\Debug\ProyectoIsaui.FrmCliente.resources
+C:\Users\lauta\OneDrive\Desktop\PROYECTOSISTEMASFINAL\ProyectoIsaui\obj\Debug\ProyectoIsaui.FrmConsultaProducto.resources
+C:\Users\lauta\OneDrive\Desktop\PROYECTOSISTEMASFINAL\ProyectoIsaui\obj\Debug\ProyectoIsaui.FrmPrincipal.resources
+C:\Users\lauta\OneDrive\Desktop\PROYECTOSISTEMASFINAL\ProyectoIsaui\obj\Debug\ProyectoIsaui.FrmProducto.resources
+C:\Users\lauta\OneDrive\Desktop\PROYECTOSISTEMASFINAL\ProyectoIsaui\obj\Debug\ProyectoIsaui.Properties.Resources.resources
+C:\Users\lauta\OneDrive\Desktop\PROYECTOSISTEMASFINAL\ProyectoIsaui\obj\Debug\ProyectoIsaui.csproj.GenerateResource.cache
+C:\Users\lauta\OneDrive\Desktop\PROYECTOSISTEMASFINAL\ProyectoIsaui\obj\Debug\ProyectoIsaui.csproj.CoreCompileInputs.cache
+C:\Users\lauta\OneDrive\Desktop\PROYECTOSISTEMASFINAL\ProyectoIsaui\obj\Debug\ProyectoIsaui.exe
+C:\Users\lauta\OneDrive\Desktop\PROYECTOSISTEMASFINAL\ProyectoIsaui\obj\Debug\ProyectoIsaui.pdb
+C:\Users\lauta\OneDrive\Desktop\PROYECTOSISTEMASFINAL\ProyectoIsaui\bin\Debug\ProyectoIsaui.exe.config
+C:\Users\lauta\OneDrive\Desktop\PROYECTOSISTEMASFINAL\ProyectoIsaui\bin\Debug\ProyectoIsaui.exe
+C:\Users\lauta\OneDrive\Desktop\PROYECTOSISTEMASFINAL\ProyectoIsaui\bin\Debug\ProyectoIsaui.pdb
+C:\Users\lauta\OneDrive\Desktop\PROYECTOSISTEMASFINAL\ProyectoIsaui\bin\Debug\Google.Protobuf.dll
+C:\Users\lauta\OneDrive\Desktop\PROYECTOSISTEMASFINAL\ProyectoIsaui\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\lauta\OneDrive\Desktop\PROYECTOSISTEMASFINAL\ProyectoIsaui\bin\Debug\Ubiety.Dns.Core.dll
+C:\Users\lauta\OneDrive\Desktop\PROYECTOSISTEMASFINAL\ProyectoIsaui\bin\Debug\Renci.SshNet.dll
+C:\Users\lauta\OneDrive\Desktop\PROYECTOSISTEMASFINAL\ProyectoIsaui\bin\Debug\MySql.Data.xml
+C:\Users\lauta\OneDrive\Desktop\PROYECTOSISTEMASFINAL\ProyectoIsaui\obj\Debug\ProyectoIsaui.csproj.CopyComplete
+C:\Users\bassk\source\repos\PROYECTOSISTEMASFINAL\ProyectoIsaui\bin\Debug\ProyectoIsaui.exe.config
+C:\Users\bassk\source\repos\PROYECTOSISTEMASFINAL\ProyectoIsaui\bin\Debug\ProyectoIsaui.exe
+C:\Users\bassk\source\repos\PROYECTOSISTEMASFINAL\ProyectoIsaui\bin\Debug\ProyectoIsaui.pdb
+C:\Users\bassk\source\repos\PROYECTOSISTEMASFINAL\ProyectoIsaui\bin\Debug\Google.Protobuf.dll
+C:\Users\bassk\source\repos\PROYECTOSISTEMASFINAL\ProyectoIsaui\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\bassk\source\repos\PROYECTOSISTEMASFINAL\ProyectoIsaui\bin\Debug\Ubiety.Dns.Core.dll
+C:\Users\bassk\source\repos\PROYECTOSISTEMASFINAL\ProyectoIsaui\bin\Debug\Renci.SshNet.dll
+C:\Users\bassk\source\repos\PROYECTOSISTEMASFINAL\ProyectoIsaui\bin\Debug\MySql.Data.xml
+C:\Users\bassk\source\repos\PROYECTOSISTEMASFINAL\ProyectoIsaui\obj\Debug\ProyectoIsaui.csproj.AssemblyReference.cache
+C:\Users\bassk\source\repos\PROYECTOSISTEMASFINAL\ProyectoIsaui\obj\Debug\ProyectoIsaui.Form1.resources
+C:\Users\bassk\source\repos\PROYECTOSISTEMASFINAL\ProyectoIsaui\obj\Debug\ProyectoIsaui.FrmBase.resources
+C:\Users\bassk\source\repos\PROYECTOSISTEMASFINAL\ProyectoIsaui\obj\Debug\ProyectoIsaui.FrmCliente.resources
+C:\Users\bassk\source\repos\PROYECTOSISTEMASFINAL\ProyectoIsaui\obj\Debug\ProyectoIsaui.FrmConsultaProducto.resources
+C:\Users\bassk\source\repos\PROYECTOSISTEMASFINAL\ProyectoIsaui\obj\Debug\ProyectoIsaui.FrmPrincipal.resources
+C:\Users\bassk\source\repos\PROYECTOSISTEMASFINAL\ProyectoIsaui\obj\Debug\ProyectoIsaui.FrmProducto.resources
+C:\Users\bassk\source\repos\PROYECTOSISTEMASFINAL\ProyectoIsaui\obj\Debug\ProyectoIsaui.Properties.Resources.resources
+C:\Users\bassk\source\repos\PROYECTOSISTEMASFINAL\ProyectoIsaui\obj\Debug\ProyectoIsaui.csproj.GenerateResource.cache
+C:\Users\bassk\source\repos\PROYECTOSISTEMASFINAL\ProyectoIsaui\obj\Debug\ProyectoIsaui.csproj.CoreCompileInputs.cache
+C:\Users\bassk\source\repos\PROYECTOSISTEMASFINAL\ProyectoIsaui\obj\Debug\ProyectoIsaui.csproj.CopyComplete
+C:\Users\bassk\source\repos\PROYECTOSISTEMASFINAL\ProyectoIsaui\obj\Debug\ProyectoIsaui.exe
+C:\Users\bassk\source\repos\PROYECTOSISTEMASFINAL\ProyectoIsaui\obj\Debug\ProyectoIsaui.pdb
