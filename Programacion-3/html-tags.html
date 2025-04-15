@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Etiquetas HTML5</title>
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+        max-width: 80%;
+        margin: 2rem auto;
+        padding: 1rem;
+        background-color: #f9f9f9;
+        color: #333;
+      }
+      h1 {
+        color: #004080;
+        border-bottom: 2px solid #004080;
+        padding-bottom: 0.5rem;
+      }
+      ul {
+        columns: 3;
+        -webkit-columns: 3;
+        -moz-columns: 3;
+        gap: 2rem;
+        padding-left: 1rem;
+      }
+      li {
+        margin-bottom: 0.4rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Listado de etiquetas válidas en HTML5</h1>
+    <p>
+      A continuación se enumeran todas las etiquetas reconocidas por HTML5
+      actualmente:
+    </p>
+    <ul>
+      <li>
+        &lt;a&gt;
+        <a href="https://github.com/">GitHub</a>
+      </li>
+      <li>
+        <h2>Ejemplo de &lt;abbr&gt;</h2>
+        &lt;abbr&gt;
+        <abbr title="Hypertext Markup Language">HTML</abbr>
+      </li>
+      <li>&lt;area&gt;</li>
+      <h2>Ejemplo de &lt;article&gt;</h2>
+      <article>
+        <h3>Título del Artículo</h3>
+        <p>Este es el contenido de un artículo independiente.</p>
+      </article>
+
+      <!-- Ejemplo de etiqueta <aside> -->
+      <h2>Ejemplo de &lt;aside&gt;</h2>
+      <p>Contenido principal.</p>
+      <aside>
+        <p>Esto es un aside.</p>
+      </aside>
+
+      <!-- Ejemplo de etiqueta <audio> -->
+      <h2>Ejemplo de &lt;audio&gt;</h2>
+      <audio controls>
+        <source src="audio-ejemplo.mp3" type="audio/mpeg" />
+        Tu navegador no soporta la etiqueta <code>audio</code>.
+      </audio>
+
+      <!-- Ejemplo de etiqueta <b> -->
+      <h2>Ejemplo de &lt;b&gt;</h2>
+      <p>Texto con énfasis visual en <b>negrita</b>.</p>
+
+      <!-- Ejemplo de etiqueta <base> -->
+      <h2>Ejemplo de &lt;base&gt;</h2>
+      <head>
+        <base href="https://example.com/" />
+      </head>
+      <p>Los enlaces de esta página usarán como base: https://example.com/.</p>
+
+      <!-- Ejemplo de etiqueta <bdi> -->
+      <h2>Ejemplo de &lt;bdi&gt;</h2>
+      <p>
+        El texto <bdi>عربى</bdi> permanece aislado y no afecta la dirección del
+        texto circundante.
+      </p>
+
+      <!-- Ejemplo de etiqueta <bdo> -->
+      <h2>Ejemplo de &lt;bdo&gt;</h2>
+      <p><bdo dir="rtl">Este texto se muestra de derecha a izquierda.</bdo></p>
+
+      <!-- Ejemplo de etiqueta <blockquote> -->
+      <h2>Ejemplo de &lt;blockquote&gt;</h2>
+      <blockquote cite="https://example.com">
+        Este es un ejemplo de cita larga.
+      </blockquote>
+
+      <!-- Ejemplo de etiqueta <body> -->
+      <h2>Ejemplo de &lt;body&gt;</h2>
+      <p>
+        El contenido visible de esta página está dentro de la etiqueta
+        <code>body</code>.
+      </p>
+
+      <!-- Ejemplo de etiqueta <br> -->
+      <h2>Ejemplo de &lt;br&gt;</h2>
+      <p>
+        Este es un texto <br />
+        con un salto de línea.
+      </p>
+
+      <li>&lt;button&gt;</li>
+      <h2>Ejemplo de &lt;canvas&gt;</h2>
+      <canvas
+        id="dibujo"
+        width="200"
+        height="200"
+        style="border: 1px solid #000"
+      ></canvas>
+      <script>
+        const canvas = document.getElementById("dibujo");
+        const ctx = canvas.getContext("2d");
+        ctx.fillStyle = "blue";
+        ctx.fillRect(20, 20, 100, 100);
+      </script>
+
+      <!-- Ejemplo de etiqueta <caption> -->
+      <h2>Ejemplo de &lt;caption&gt;</h2>
+      <table border="1">
+        <caption>
+          Tabla de Ejemplo
+        </caption>
+        <tr>
+          <th>Columna 1</th>
+          <th>Columna 2</th>
+        </tr>
+        <tr>
+          <td>Dato 1</td>
+          <td>Dato 2</td>
+        </tr>
+      </table>
+
+      <!-- Ejemplo de etiqueta <cite> -->
+      <h2>Ejemplo de &lt;cite&gt;</h2>
+      <p>
+        Este artículo hace referencia al libro
+        <cite>Don Quijote de la Mancha</cite>.
+      </p>
+
+      <!-- Ejemplo de etiqueta <code> -->
+      <h2>Ejemplo de &lt;code&gt;</h2>
+      <p>Un ejemplo de código es: <code>console.log('Hola, mundo!');</code>.</p>
+
+      <!-- Ejemplo de etiqueta <col> -->
+      <h2>Ejemplo de &lt;col&gt;</h2>
+      <table border="1">
+        <colgroup>
+          <col style="background-color: lightblue" />
+          <col style="background-color: lightgreen" />
+        </colgroup>
+        <tr>
+          <th>Columna 1</th>
+          <th>Columna 2</th>
+        </tr>
+        <tr>
+          <td>Dato 1</td>
+          <td>Dato 2</td>
+        </tr>
+      </table>
+
+      <!-- Ejemplo de etiqueta <colgroup> -->
+      <h2>Ejemplo de &lt;colgroup&gt;</h2>
+      <table border="1">
+        <colgroup>
+          <col span="1" style="background-color: lightblue" />
+          <col span="1" style="background-color: lightgreen" />
+        </colgroup>
+        <tr>
+          <th>Columna 1</th>
+          <th>Columna 2</th>
+        </tr>
+        <tr>
+          <td>Dato 1</td>
+          <td>Dato 2</td>
+        </tr>
+      </table>
+
+      <!-- Ejemplo de etiqueta <data> -->
+      <h2>Ejemplo de &lt;data&gt;</h2>
+      <p>El precio del producto es <data value="50">$50</data>.</p>
+
+      <!-- Ejemplo de etiqueta <datalist> -->
+      <h2>Ejemplo de &lt;datalist&gt;</h2>
+      <label for="navegador">Elige un navegador:</label>
+      <input list="navegadores" id="navegador" name="navegador" />
+      <datalist id="navegadores">
+        <option value="Chrome"></option>
+        <option value="Firefox"></option>
+        <option value="Safari"></option>
+        <option value="Opera"></option>
+        <option value="Edge"></option>
+      </datalist>
+
+      <!-- Ejemplo de etiqueta <dd> -->
+      <h2>Ejemplo de &lt;dd&gt;</h2>
+      <dl>
+        <dt>HTML</dt>
+        <dd>Lenguaje de marcado para estructura de páginas web.</dd>
+        <dt>CSS</dt>
+        <dd>Lenguaje de diseño para estilos visuales.</dd>
+      </dl>
+
+      <!-- Ejemplo de etiqueta <del> -->
+      <h2>Ejemplo de &lt;del&gt;</h2>
+      <p>Este es un texto <del>eliminado</del>.</p>
+
+      <!-- Ejemplo de etiqueta <details> -->
+      <h2>Ejemplo de &lt;details&gt;</h2>
+      <details>
+        <summary>Haz clic para ver más información</summary>
+        <p>Esta es información adicional que se muestra al hacer clic.</p>
+      </details>
+
+      <!-- Ejemplo de etiqueta <dfn> -->
+      <h2>Ejemplo de &lt;dfn&gt;</h2>
+      <p>
+        La palabra <dfn>hipervínculo</dfn> se refiere a un enlace en una página
+        web.
+      </p>
+
+      <!-- Ejemplo de etiqueta <dialog> -->
+      <h2>Ejemplo de &lt;dialog&gt;</h2>
+      <dialog id="miDialogo">
+        <p>Este es un cuadro de diálogo.</p>
+        <button onclick="document.getElementById('miDialogo').close()">
+          Cerrar
+        </button>
+      </dialog>
+      <button onclick="document.getElementById('miDialogo').show()">
+        Abrir Diálogo
+      </button>
+
+      <!-- Ejemplo de etiqueta <div> -->
+      <h2>Ejemplo de &lt;div&gt;</h2>
+      <div style="background-color: lightgray; padding: 10px">
+        Este es un contenedor <code>div</code> con un fondo gris.
+      </div>
+
+      <!-- Ejemplo de etiqueta <dl> -->
+      <h2>Ejemplo de &lt;dl&gt;</h2>
+      <dl>
+        <dt>HTML</dt>
+        <dd>Lenguaje de marcado.</dd>
+        <dt>CSS</dt>
+        <dd>Lenguaje de estilos.</dd>
+      </dl>
+
+      <!-- Ejemplo de etiqueta <dt> -->
+      <h2>Ejemplo de &lt;dt&gt;</h2>
+      <dl>
+        <dt>HTML</dt>
+        <dd>Lenguaje de marcado.</dd>
+      </dl>
+
+      <li>&lt;em&gt;</li>
+      <li>&lt;embed&gt;</li>
+      <h2>Ejemplo de &lt;fieldset&gt;</h2>
+      <form>
+        <fieldset>
+          <legend>Información Personal</legend>
+          <label for="nombre">Nombre:</label>
+          <input type="text" id="nombre" name="nombre" />
+          <br />
+          <label for="edad">Edad:</label>
+          <input type="number" id="edad" name="edad" />
+        </fieldset>
+      </form>
+
+      <!-- Ejemplo de etiqueta <figcaption> -->
+      <h2>Ejemplo de &lt;figcaption&gt;</h2>
+      <figure>
+        <img src="example.jpg" alt="Ejemplo de figura" />
+        <figcaption>Esta es una imagen de ejemplo con una leyenda.</figcaption>
+      </figure>
+
+      <!-- Ejemplo de etiqueta <figure> -->
+      <h2>Ejemplo de &lt;figure&gt;</h2>
+      <figure>
+        <img src="example.jpg" alt="Ejemplo de figura" />
+        <figcaption>
+          Un ejemplo de figura con una imagen y una leyenda.
+        </figcaption>
+      </figure>
+
+      <!-- Ejemplo de etiqueta <footer> -->
+      <h2>Ejemplo de &lt;footer&gt;</h2>
+      <footer>
+        <p>Copyright &copy; 2025. Todos los derechos reservados.</p>
+      </footer>
+
+      <!-- Ejemplo de etiqueta <form> -->
+      <h2>Ejemplo de &lt;form&gt;</h2>
+      <form action="/submit" method="post">
+        <label for="correo">Correo:</label>
+        <input type="email" id="correo" name="correo" />
+        <br />
+        <label for="contraseña">Contraseña:</label>
+        <input type="password" id="contraseña" name="contraseña" />
+        <br />
+        <button type="submit">Enviar</button>
+      </form>
+
+      <!-- Ejemplo de etiquetas <h1> a <h6> -->
+      <h2>Ejemplo de etiquetas de encabezado (&lt;h1&gt; a &lt;h6&gt;)</h2>
+      <h1>Encabezado Nivel 1</h1>
+      <h2>Encabezado Nivel 2</h2>
+      <h3>Encabezado Nivel 3</h3>
+      <h4>Encabezado Nivel 4</h4>
+      <h5>Encabezado Nivel 5</h5>
+      <h6>Encabezado Nivel 6</h6>
+
+      <!-- Ejemplo de etiqueta <head> -->
+      <h2>Ejemplo de &lt;head&gt;</h2>
+      <p>
+        El contenido del <code>&lt;head&gt;</code> incluye metadatos, estilos y
+        scripts, y no es visible en la página.
+      </p>
+
+      <!-- Ejemplo de etiqueta <header> -->
+      <h2>Ejemplo de &lt;header&gt;</h2>
+      <header>
+        <h1>Bienvenidos a mi sitio web</h1>
+        <nav>
+          <a href="#inicio">Inicio</a> | <a href="#sobre">Sobre mí</a> |
+          <a href="#contacto">Contacto</a>
+        </nav>
+      </header>
+
+      <!-- Ejemplo de etiqueta <hr> -->
+      <h2>Ejemplo de &lt;hr&gt;</h2>
+      <p>Este es un texto antes de la línea horizontal.</p>
+      <hr />
+      <p>Este es un texto después de la línea horizontal.</p>
+
+      <!-- Ejemplo de etiqueta <html> -->
+      <h2>Ejemplo de &lt;html&gt;</h2>
+      <p>
+        La etiqueta <code>&lt;html&gt;</code> es el contenedor principal de todo
+        el contenido de la página web.
+      </p>
+
+      <!-- Ejemplo de etiqueta <i> -->
+      <h2>Ejemplo de &lt;i&gt;</h2>
+      <p>Este texto tiene una palabra en <i>cursiva</i>.</p>
+
+      <!-- Ejemplo de etiqueta <iframe> -->
+      <h2>Ejemplo de &lt;iframe&gt;</h2>
+      <iframe
+        src="https://example.com"
+        width="600"
+        height="400"
+        title="Ejemplo de iframe"
+      ></iframe>
+
+      <!-- Ejemplo de etiqueta <img> -->
+      <h2>Ejemplo de &lt;img&gt;</h2>
+      <img src="example.jpg" alt="Texto alternativo de ejemplo" width="300" />
+
+      <!-- Ejemplo de etiqueta <input> -->
+      <h2>Ejemplo de &lt;input&gt;</h2>
+      <form>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" />
+        <br />
+        <label for="edad">Edad:</label>
+        <input type="number" id="edad" name="edad" />
+      </form>
+
+      <!-- Ejemplo de etiqueta <ins> -->
+      <h2>Ejemplo de &lt;ins&gt;</h2>
+      <p>Este texto tiene una palabra <ins>insertada</ins>.</p>
+
+      <!-- Ejemplo de etiqueta <kbd> -->
+      <h2>Ejemplo de &lt;kbd&gt;</h2>
+      <p>Para guardar, presiona <kbd>Ctrl</kbd> + <kbd>S</kbd>.</p>
+
+      <!-- Ejemplo de etiqueta <label> -->
+      <h2>Ejemplo de &lt;label&gt;</h2>
+      <form>
+        <label for="correo">Correo:</label>
+        <input type="email" id="correo" name="correo" />
+      </form>
+
+      <!-- Ejemplo de etiqueta <legend> -->
+      <h2>Ejemplo de &lt;legend&gt;</h2>
+      <form>
+        <fieldset>
+          <legend>Detalles de Contacto</legend>
+          <label for="telefono">Teléfono:</label>
+          <input type="tel" id="telefono" name="telefono" />
+        </fieldset>
+      </form>
+
+      <!-- Ejemplo de etiqueta <li> -->
+      <h2>Ejemplo de &lt;li&gt;</h2>
+      <ul>
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+        <li>Elemento 3</li>
+      </ul>
+      <li>&lt;link&gt;</li>
+      <h2>Ejemplo de &lt;main&gt;</h2>
+      <main>
+        <h3>Contenido Principal</h3>
+        <p>Este es el contenido principal de la página.</p>
+      </main>
+
+      <!-- Ejemplo de etiqueta <map> -->
+      <h2>Ejemplo de &lt;map&gt;</h2>
+      <p>Haz clic en las diferentes áreas:</p>
+      <img src="example-image.jpg" alt="Mapa de ejemplo" usemap="#mapa" />
+      <map name="mapa">
+        <area
+          shape="rect"
+          coords="0,0,100,100"
+          href="https://example.com/rect"
+          alt="Rectángulo"
+        />
+        <area
+          shape="circle"
+          coords="150,150,50"
+          href="https://example.com/circle"
+          alt="Círculo"
+        />
+      </map>
+
+      <!-- Ejemplo de etiqueta <mark> -->
+      <h2>Ejemplo de &lt;mark&gt;</h2>
+      <p>Este texto tiene una palabra <mark>resaltada</mark>.</p>
+
+      <!-- Ejemplo de etiqueta <math> -->
+      <h2>Ejemplo de &lt;math&gt; (Matemáticas)</h2>
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <msup>
+          <mi>x</mi>
+          <mn>2</mn>
+        </msup>
+        <mo>+</mo>
+        <mn>4</mn>
+        <mo>=</mo>
+        <mn>0</mn>
+      </math>
+
+      <!-- Ejemplo de etiqueta <menu> -->
+      <h2>Ejemplo de &lt;menu&gt;</h2>
+      <menu>
+        <li><a href="#opcion1">Opción 1</a></li>
+        <li><a href="#opcion2">Opción 2</a></li>
+        <li><a href="#opcion3">Opción 3</a></li>
+      </menu>
+
+      <!-- Ejemplo de etiqueta <menuitem> -->
+      <h2>
+        Ejemplo de &lt;menuitem&gt; (No soportado por algunos navegadores)
+      </h2>
+      <!-- no soportado por HTML5 en algunos navegadores -->
+      <menu>
+        <menuitem label="Abrir" icon="open-icon.png"></menuitem>
+        <menuitem label="Guardar" icon="save-icon.png"></menuitem>
+      </menu>
+
+      <!-- Ejemplo de etiqueta <meta> -->
+      <h2>Ejemplo de &lt;meta&gt;</h2>
+      <p>
+        La etiqueta <code>&lt;meta&gt;</code> define metadatos, como el autor o
+        descripción de la página.
+      </p>
+
+      <!-- Ejemplo de etiqueta <meter> -->
+      <h2>Ejemplo de &lt;meter&gt;</h2>
+      <p>Progreso del proyecto:</p>
+      <meter value="0.6" min="0" max="1">60%</meter>
+
+      <!-- Ejemplo de etiqueta <nav> -->
+      <h2>Ejemplo de &lt;nav&gt;</h2>
+      <nav>
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <!-- Ejemplo de etiqueta <noscript> -->
+      <h2>Ejemplo de &lt;noscript&gt;</h2>
+      <noscript>
+        <p>
+          El JavaScript está deshabilitado en tu navegador. Algunas funciones
+          pueden no funcionar.
+        </p>
+      </noscript>
+
+      <!-- Ejemplo de etiqueta <object> -->
+      <h2>Ejemplo de &lt;object&gt;</h2>
+      <object
+        data="example.pdf"
+        type="application/pdf"
+        width="600"
+        height="400"
+      >
+        <p>Tu navegador no soporta la visualización de documentos PDF.</p>
+      </object>
+
+      <!-- Ejemplo de etiqueta <ol> -->
+      <h2>Ejemplo de &lt;ol&gt;</h2>
+      <ol>
+        <li>Primer elemento</li>
+        <li>Segundo elemento</li>
+        <li>Tercer elemento</li>
+      </ol>
+
+      <!-- Ejemplo de etiqueta <optgroup> -->
+      <h2>Ejemplo de &lt;optgroup&gt;</h2>
+      <label for="frutas">Elige una fruta:</label>
+      <select id="frutas">
+        <optgroup label="Cítricos">
+          <option value="naranja">Naranja</option>
+          <option value="limon">Limón</option>
+        </optgroup>
+        <optgroup label="Bayas">
+          <option value="fresa">Fresa</option>
+          <option value="mora">Mora</option>
+        </optgroup>
+      </select>
+
+      <!-- Ejemplo de etiqueta <option> -->
+      <h2>Ejemplo de &lt;option&gt;</h2>
+      <label for="colores">Elige un color:</label>
+      <select id="colores">
+        <option value="rojo">Rojo</option>
+        <option value="verde">Verde</option>
+        <option value="azul">Azul</option>
+      </select>
+
+      <!-- Ejemplo de etiqueta <output> -->
+      <h2>Ejemplo de &lt;output&gt;</h2>
+      <form oninput="resultado.value=parseInt(a.value)+parseInt(b.value)">
+        <input type="number" id="a" value="0" /> +
+        <input type="number" id="b" value="0" /> =
+        <output name="resultado">0</output>
+      </form>
+
+      <!-- Ejemplo de etiqueta <p> -->
+      <h2>Ejemplo de &lt;p&gt;</h2>
+      <p>Este es un párrafo en HTML.</p>
+
+      <!-- Ejemplo de etiqueta <param> -->
+      <h2>Ejemplo de &lt;param&gt;</h2>
+      <object
+        data="movie.swf"
+        type="application/x-shockwave-flash"
+        width="400"
+        height="300"
+      >
+        <param name="autoplay" value="true" />
+        <p>Tu navegador no soporta Flash.</p>
+      </object>
+
+      <!-- Ejemplo de etiqueta <pre> -->
+      <h2>Ejemplo de &lt;pre&gt;</h2>
+      <pre>
+        Texto preformateado con espacios
+        y saltos de línea conservados.
+      </pre>
+
+      <!-- Ejemplo de etiqueta <progress> -->
+      <h2>Ejemplo de &lt;progress&gt;</h2>
+      <p>Progreso de descarga:</p>
+      <progress value="70" max="100">70%</progress>
+      <!-- Ejemplo de etiqueta <q> -->
+      <h2>Ejemplo de &lt;q&gt;</h2>
+      <p>Esta es una cita breve: <q>El conocimiento es poder.</q></p>
+
+      <!-- Ejemplo de etiqueta <rp> -->
+      <h2>Ejemplo de &lt;rp&gt;</h2>
+      <p>Ejemplo con anotaciones ruby:</p>
+      <ruby>
+        漢 <rp>(</rp><rt>kan</rt><rp>)</rp> 字 <rp>(</rp><rt>ji</rt><rp>)</rp>
+      </ruby>
+
+      <!-- Ejemplo de etiqueta <rt> -->
+      <h2>Ejemplo de &lt;rt&gt;</h2>
+      <p>Ejemplo con anotaciones ruby:</p>
+      <ruby> 学 <rt>gaku</rt> 校 <rt>kou</rt> </ruby>
+
+      <!-- Ejemplo de etiqueta <ruby> -->
+      <h2>Ejemplo de &lt;ruby&gt;</h2>
+      <p>Texto con anotaciones ruby:</p>
+      <ruby> 日本 <rt>nihon</rt> 語 <rt>go</rt> </ruby>
+
+      <!-- Ejemplo de etiqueta <s> -->
+      <h2>Ejemplo de &lt;s&gt;</h2>
+      <p>Este texto tiene una palabra <s>tachada</s>.</p>
+
+      <!-- Ejemplo de etiqueta <samp> -->
+      <h2>Ejemplo de &lt;samp&gt;</h2>
+      <p>
+        El texto devuelto por el sistema es:
+        <samp>Error 404: No encontrado.</samp>
+      </p>
+
+      <!-- Ejemplo de etiqueta <script> -->
+      <h2>Ejemplo de &lt;script&gt;</h2>
+      <script>
+        console.log("Hola desde JavaScript!");
+      </script>
+      <p>Abre la consola del navegador para ver el mensaje de prueba.</p>
+
+      <!-- Ejemplo de etiqueta <section> -->
+      <h2>Ejemplo de &lt;section&gt;</h2>
+      <section>
+        <h3>Sección 1</h3>
+        <p>Contenido de la primera sección.</p>
+      </section>
+
+      <!-- Ejemplo de etiqueta <select> -->
+      <h2>Ejemplo de &lt;select&gt;</h2>
+      <label for="pais">Elige un país:</label>
+      <select id="pais" name="pais">
+        <option value="argentina">Argentina</option>
+        <option value="espana">España</option>
+        <option value="mexico">México</option>
+      </select>
+
+      <!-- Ejemplo de etiqueta <slot> -->
+      <h2>Ejemplo de &lt;slot&gt;</h2>
+      <template id="mi-template">
+        <p>Este es un contenido dentro del <slot>slot</slot>.</p>
+      </template>
+
+      <!-- Ejemplo de etiqueta <small> -->
+      <h2>Ejemplo de &lt;small&gt;</h2>
+      <p>Este texto tiene una nota <small>en tamaño reducido.</small></p>
+
+      <!-- Ejemplo de etiqueta <source> -->
+      <h2>Ejemplo de &lt;source&gt;</h2>
+      <video controls>
+        <source src="video-ejemplo.mp4" type="video/mp4" />
+        <source src="video-ejemplo.ogg" type="video/ogg" />
+        Tu navegador no soporta el elemento de video.
+      </video>
+
+      <!-- Ejemplo de etiqueta <span> -->
+      <h2>Ejemplo de &lt;span&gt;</h2>
+      <p>
+        Este texto contiene una
+        <span style="color: red">palabra resaltada en rojo</span>.
+      </p>
+
+      <!-- Ejemplo de etiqueta <strong> -->
+      <h2>Ejemplo de &lt;strong&gt;</h2>
+      <p>Este texto incluye una palabra <strong>importante</strong>.</p>
+
+      <!-- Ejemplo de etiqueta <style> -->
+      <h2>Ejemplo de &lt;style&gt;</h2>
+      <style>
+        .resaltado {
+          color: blue;
+          font-weight: bold;
+        }
+      </style>
+      <p class="resaltado">Este es un texto estilizado con CSS en línea.</p>
+
+      <!-- Ejemplo de etiqueta <sub> -->
+      <h2>Ejemplo de &lt;sub&gt;</h2>
+      <p>El agua tiene la fórmula H<sub>2</sub>O.</p>
+
+      <!-- Ejemplo de etiqueta <summary> -->
+      <h2>Ejemplo de &lt;summary&gt;</h2>
+      <details>
+        <summary>Detalles de ejemplo</summary>
+        <p>
+          Este es un texto adicional dentro del elemento <code>details</code>.
+        </p>
+      </details>
+
+      <!-- Ejemplo de etiqueta <sup> -->
+      <h2>Ejemplo de &lt;sup&gt;</h2>
+      <p>El área de un cuadrado es lado<sup>2</sup>.</p>
+
+      <!-- Ejemplo de etiqueta <svg> -->
+      <h2>Ejemplo de &lt;svg&gt;</h2>
+      <svg width="100" height="100">
+        <circle
+          cx="50"
+          cy="50"
+          r="40"
+          stroke="black"
+          stroke-width="3"
+          fill="red"
+        />
+      </svg>
+
+      <!-- Ejemplo de etiqueta <table> -->
+      <h2>Ejemplo de &lt;table&gt;</h2>
+      <table border="1">
+        <thead>
+          <tr>
+            <th>Columna 1</th>
+            <th>Columna 2</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Dato 1</td>
+            <td>Dato 2</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Ejemplo de etiqueta <tbody> -->
+      <h2>Ejemplo de &lt;tbody&gt;</h2>
+      <table border="1">
+        <thead>
+          <tr>
+            <th>Encabezado 1</th>
+            <th>Encabezado 2</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Celda 1</td>
+            <td>Celda 2</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Ejemplo de etiqueta <td> -->
+      <h2>Ejemplo de &lt;td&gt;</h2>
+      <table border="1">
+        <tr>
+          <td>Celda 1</td>
+          <td>Celda 2</td>
+        </tr>
+      </table>
+      <!-- Ejemplo de etiqueta <template> -->
+      <h2>Ejemplo de &lt;template&gt;</h2>
+      <template id="mi-template">
+        <p>Este contenido se renderizará dinámicamente.</p>
+      </template>
+      <button id="btn-template">Cargar Template</button>
+      <div id="contenedor"></div>
+      <script>
+        document.getElementById("btn-template").onclick = function () {
+          const template = document.getElementById("mi-template");
+          const clone = template.content.cloneNode(true);
+          document.getElementById("contenedor").appendChild(clone);
+        };
+      </script>
+
+      <!-- Ejemplo de etiqueta <textarea> -->
+      <h2>Ejemplo de &lt;textarea&gt;</h2>
+      <label for="comentarios">Comentarios:</label>
+      <textarea id="comentarios" name="comentarios" rows="4" cols="50">
+Escribe tus comentarios aquí...
+  </textarea
+      >
+
+      <!-- Ejemplo de etiqueta <tfoot> -->
+      <h2>Ejemplo de &lt;tfoot&gt;</h2>
+      <table border="1">
+        <thead>
+          <tr>
+            <th>Producto</th>
+            <th>Precio</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Manzanas</td>
+            <td>$1.00</td>
+          </tr>
+          <tr>
+            <td>Naranjas</td>
+            <td>$1.50</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td>Total</td>
+            <td>$2.50</td>
+          </tr>
+        </tfoot>
+      </table>
+
+      <!-- Ejemplo de etiqueta <th> -->
+      <h2>Ejemplo de &lt;th&gt;</h2>
+      <table border="1">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Edad</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Juan</td>
+            <td>25</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Ejemplo de etiqueta <thead> -->
+      <h2>Ejemplo de &lt;thead&gt;</h2>
+      <table border="1">
+        <thead>
+          <tr>
+            <th>Columna 1</th>
+            <th>Columna 2</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Dato 1</td>
+            <td>Dato 2</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Ejemplo de etiqueta <time> -->
+      <h2>Ejemplo de &lt;time&gt;</h2>
+      <p>
+        El evento tendrá lugar el
+        <time datetime="2025-05-01">1 de mayo de 2025</time>.
+      </p>
+
+      <!-- Ejemplo de etiqueta <title> -->
+      <h2>Ejemplo de &lt;title&gt;</h2>
+      <p>
+        La etiqueta <code>&lt;title&gt;</code> establece el título de la página,
+        visible en la pestaña del navegador.
+      </p>
+
+      <!-- Ejemplo de etiqueta <tr> -->
+      <h2>Ejemplo de &lt;tr&gt;</h2>
+      <table border="1">
+        <tr>
+          <td>Celda 1</td>
+          <td>Celda 2</td>
+        </tr>
+      </table>
+
+      <!-- Ejemplo de etiqueta <track> -->
+      <h2>Ejemplo de &lt;track&gt;</h2>
+      <video controls>
+        <source src="video-ejemplo.mp4" type="video/mp4" />
+        <track
+          src="subtitulos.vtt"
+          kind="subtitles"
+          srclang="es"
+          label="Español"
+        />
+        Tu navegador no soporta el elemento de video.
+      </video>
+
+      <!-- Ejemplo de etiqueta <u> -->
+      <h2>Ejemplo de &lt;u&gt;</h2>
+      <p>Este texto tiene una palabra <u>subrayada</u>.</p>
+
+      <!-- Ejemplo de etiqueta <ul> -->
+      <h2>Ejemplo de &lt;ul&gt;</h2>
+      <ul>
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+        <li>Elemento 3</li>
+      </ul>
+
+      <!-- Ejemplo de etiqueta <var> -->
+      <h2>Ejemplo de &lt;var&gt;</h2>
+      <p>En la fórmula <var>x</var> + 2 = 4, el valor de <var>x</var> es 2.</p>
+
+      <!-- Ejemplo de etiqueta <video> -->
+      <h2>Ejemplo de &lt;video&gt;</h2>
+      <video controls width="600">
+        <source src="video-ejemplo.mp4" type="video/mp4" />
+        Tu navegador no soporta el elemento de video.
+      </video>
+
+      <!-- Ejemplo de etiqueta <wbr> -->
+      <h2>Ejemplo de &lt;wbr&gt;</h2>
+      <p>
+        Esta es una palabra muy larga que puede dividirse en varias líneas:
+        supercalifragilistico<wbr />espialidoso.
+      </p>
+    </ul>
+  </body>
+</html>

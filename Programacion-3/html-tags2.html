@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Etiquetas HTML5</title>
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+        max-width: 80%;
+        margin: 2rem auto;
+        padding: 1rem;
+        background-color: #f9f9f9;
+        color: #333;
+      }
+      h1 {
+        color: #004080;
+        border-bottom: 2px solid #004080;
+        padding-bottom: 0.5rem;
+      }
+      ul {
+        columns: 3;
+        -webkit-columns: 3;
+        -moz-columns: 3;
+        gap: 2rem;
+        padding-left: 1rem;
+      }
+      li {
+        margin-bottom: 0.4rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Listado de etiquetas válidas en HTML5</h1>
+    <p>
+      A continuación se muestran ejemplos sencillos de uso de cada etiqueta en
+      su correspondiente ítem de lista.
+    </p>
+    <ul>
+      <!-- 1. &lt;a&gt; -->
+      <li>
+        &lt;a&gt;:
+        <a href="https://github.com" target="_blank">Visita GitHub</a>
+      </li>
+
+      <!-- 2. &lt;abbr&gt; -->
+      <li>
+        &lt;abbr&gt;: Ejemplo:
+        <abbr title="Hypertext Markup Language">HTML</abbr>
+      </li>
+
+      <!-- 3. &lt;area&gt; (usado en mapas de imagen) -->
+      <li>
+        &lt;area&gt;:
+        <img
+          src="https://www.w3schools.com/html/pic_trulli.jpg"
+          alt="Casa Trulli"
+          usemap="#casaMap"
+          style="max-width: 90%; border: 1px solid #ddd;"
+        />
+        <map name="casaMap">
+          <!-- Techo (forma de polígono) -->
+          <area
+            shape="poly"
+            coords="258,52,311,18,368,52,368,105,258,105"
+            href="https://es.wikipedia.org/wiki/Tejado"
+            alt="Techo"
+            title="Techo de la casa"
+          />
+          <!-- Puerta (forma de rectángulo) -->
+          <area
+            shape="rect"
+            coords="290,172,333,219"
+            href="https://es.wikipedia.org/wiki/Puerta"
+            alt="Puerta"
+            title="Puerta de entrada"
+          />
+          <!-- Ventana (forma de rectángulo) -->
+          <area
+            shape="rect"
+            coords="337,142,367,167"
+            href="https://es.wikipedia.org/wiki/Ventana"
+            alt="Ventana"
+            title="Ventana de la casa"
+          />
+        </map>
+        <p><small>Pasa el mouse sobre el techo, la puerta o la ventana y haz clic para más información</small></p>
+      </li>
+
+      <!-- 4. &lt;article&gt; -->
+      <li>
+        &lt;article&gt;:
+        <article>
+          <h2>Artículo de ejemplo</h2>
+          <p>Texto ejemplo.</p>
+        </article>
+      </li>
+
+      <!-- 5. &lt;aside&gt; -->
+      <li>
+        &lt;aside&gt;:
+        <aside>
+          <p>Información (publicidad por ejemplo)</p>
+        </aside>
+      </li>
+
+      <!-- 6. &lt;audio&gt; -->
+      <li>
+        &lt;audio&gt;:
+        <audio controls style="vertical-align: middle">
+          <source src="audio/ejemplo.mp3" type="audio/mpeg" />
+          Tu navegador no soporta audio.
+        </audio>
+      </li>
+
+      <!-- 7. &lt;b&gt; -->
+      <li>
+        &lt;b&gt;:
+        <b>Texto en negrita</b>
+      </li>
+
+      <!-- 8. &lt;base&gt; -->
+      <li>
+        &lt;base&gt;:
+        <!-- ya definido en el head -->
+        (ya definido en el &lt;head&gt;)
+      </li>
+
+      <!-- 9. &lt;bdi&gt; -->
+      <li>&lt;bdi&gt;: Ejemplo: <bdi>مثال</bdi></li>
+
+      <!-- 10. &lt;bdo&gt; -->
+      <li>&lt;bdo&gt;: Ejemplo: <bdo dir="rtl">Texto invertido</bdo></li>
+
+      <!-- 11. &lt;blockquote&gt; -->
+      <li>
+        &lt;blockquote&gt;:
+        <blockquote cite="https://example.com">Cita ejemplo.</blockquote>
+      </li>
+
+      <!-- 12. &lt;body&gt; -->
+      <li>&lt;body&gt;: (Ya esta usada en el documento actual)</li>
+
+      <!-- 13. &lt;br&gt; -->
+      <li>&lt;br&gt;: Linea 1<br />Linea 2 (salto de linea)</li>
+
+      <!-- 14. &lt;button&gt; -->
+      <li>
+        &lt;button&gt;:
+        <button type="button"">Click Aqui</button>
+      </li>
+
+      <!-- 15. &lt;canvas&gt; -->
+      <li>
+        &lt;canvas&gt;:
+        <canvas
+          id="cvs"
+          width="100"
+          height="50"
+          style="border: 1px solid #000"
+        ></canvas>
+        <!-- (Se puede usar JavaScript para dibujar en el canvas) -->
+      </li>
+
+      <!-- 16. &lt;caption&gt; -->
+      <li>
+        &lt;caption&gt;:
+        <table border="1">
+          <caption>Ahorros del mes</caption>
+          <tr>
+            <th>Mes</th>
+            <th>Ahorros</th>
+          </tr>
+          <tr>
+            <td>Enero</td>
+            <td>$100</td>
+          </tr>
+        </table>
+      </li>
+
+      <!-- 17. &lt;cite&gt; -->
+      <li>&lt;cite&gt;: Ejemplo: <cite>Cita de ejemplo</cite></li>
+
+      <!-- 18. &lt;code&gt; -->
+      <li>&lt;code&gt;: Ejemplo: <code>console.log('Hola');</code></li>
+
+      <!-- 19. &lt;col&gt; y &lt;colgroup&gt; -->
+      <li>
+        &lt;col&gt; y &lt;colgroup&gt;:
+        <table border="1">
+          <colgroup>
+            <col style="background: #e0e0e0" />
+            <col />
+          </colgroup>
+          <tr>
+            <th>Encabezado 1</th>
+            <th>Encabezado 2</th>
+          </tr>
+          <tr>
+            <td>Dato 1</td>
+            <td>Dato 2</td>
+          </tr>
+        </table>
+      </li>
+
+      <!-- 20. &lt;data&gt; -->
+      <li>&lt;data&gt;: Ejemplo: Precio: <data value="29.99">29.99€</data></li>
+
+      <!-- 21. &lt;datalist&gt; -->
+      <li>
+        &lt;datalist&gt;:
+        <input list="colores" placeholder="Elige un color" />
+        <datalist id="colores">
+          <option value="Rojo"></option>
+          <option value="Verde"></option>
+          <option value="Azul"></option>
+        </datalist>
+      </li>
+
+      <!-- 22. &lt;dd&gt; -->
+      <li>
+        &lt;dd&gt;:
+        <dl>
+          <dt>Cafe</dt>
+          <dd>Cafe Negro</dd>
+          <dt>Leche</dt>
+          <dd>Cafe con leche</dd>
+        </dl>
+      </li>
+
+      <!-- 23. &lt;del&gt; -->
+      <li>&lt;del&gt;: Ejemplo: Texto <del>eliminado</del></li>
+
+      <!-- 24. &lt;details&gt; -->
+      <li>
+        &lt;details&gt;:
+        <details>
+          <summary>Más información</summary>
+          <p>Contenido al expandir el summary</p>
+        </details>
+      </li>
+
+      <!-- 25. &lt;dfn&gt; -->
+      <li>
+        &lt;dfn&gt;: Ejemplo: La palabra
+        <dfn title="definición de término">concepto</dfn> se explica aquí.
+      </li>
+
+      <!-- 26. &lt;dialog&gt; -->
+      <li>
+        &lt;dialog&gt;:
+        <dialog open>
+          Diálogo de ejemplo
+          <button onclick="this.parentElement.close()">Cerrar</button>
+        </dialog>
+      </li>
+
+      <!-- 27. &lt;div&gt; -->
+      <li>
+        &lt;div&gt;:
+        <div style="border: 1px solid #000; padding: 5px">
+          Contenido de un div
+        </div>
+      </li>
+
+      <!-- 28. &lt;dl&gt; -->
+      <li>
+        &lt;dl&gt;:
+        <dl>
+          <dt>Clave</dt>
+          <dd>Valor</dd>
+        </dl>
+      </li>
+
+      <!-- 29. &lt;dt&gt; (incluido en el dl anterior) -->
+      <li>&lt;dt&gt;: (Incluido en el ejemplo de &lt;dl&gt;)</li>
+
+      <!-- 30. &lt;em&gt; -->
+      <li>&lt;em&gt;: Ejemplo: <em>Texto con énfasis</em></li>
+
+      <!-- 31. &lt;embed&gt; -->
+      <li>
+        &lt;embed&gt;: Ejemplo:
+        <embed
+          src="media/ejemplo.pdf"
+          type="application/pdf"
+          width="100"
+          height="50"
+        />
+      </li>
+
+      <!-- 32. &lt;fieldset&gt; -->
+      <li>
+        &lt;fieldset&gt;:
+        <fieldset style="padding: 5px">
+          <legend>Datos</legend>
+          <input type="text" placeholder="Escribe algo" />
+        </fieldset>
+      </li>
+
+      <!-- 33. &lt;figcaption&gt; y &lt;figure&gt; -->
+      <li>
+        &lt;figure&gt; y &lt;figcaption&gt;:
+        <figure style="display: inline-block; text-align: center">
+          <img src="https://via.placeholder.com/50" alt="Ejemplo" />
+          <figcaption>Figura ilustrativa</figcaption>
+        </figure>
+      </li>
+
+      <!-- 34. &lt;footer&gt; -->
+      <li>
+        &lt;footer&gt;:
+        <footer style="border-top: 1px solid #ccc; padding-top: 5px">
+          Pie de página
+        </footer>
+      </li>
+
+      <!-- 35. &lt;form&gt; -->
+      <li>
+        &lt;form&gt;:
+        <form action="#" method="post">
+          <input type="text" placeholder="Tu nombre" />
+          <button type="submit">Enviar</button>
+        </form>
+      </li>
+
+      <!-- 36. &lt;h1&gt; -->
+      <li>
+        &lt;h1&gt;:
+        <h1 style="font-size: 1.5em; margin: 0">Título de nivel 1</h1>
+      </li>
+
+      <!-- 37. &lt;h2&gt; -->
+      <li>
+        &lt;h2&gt;:
+        <h2 style="font-size: 1.4em; margin: 0">Título de nivel 2</h2>
+      </li>
+
+      <!-- 38. &lt;h3&gt; -->
+      <li>
+        &lt;h3&gt;:
+        <h3 style="font-size: 1.3em; margin: 0">Título de nivel 3</h3>
+      </li>
+
+      <!-- 39. &lt;h4&gt; -->
+      <li>
+        &lt;h4&gt;:
+        <h4 style="font-size: 1.2em; margin: 0">Título de nivel 4</h4>
+      </li>
+
+      <!-- 40. &lt;h5&gt; -->
+      <li>
+        &lt;h5&gt;:
+        <h5 style="font-size: 1.1em; margin: 0">Título de nivel 5</h5>
+      </li>
+
+      <!-- 41. &lt;h6&gt; -->
+      <li>
+        &lt;h6&gt;:
+        <h6 style="font-size: 1em; margin: 0">Título de nivel 6</h6>
+      </li>
+
+      <!-- 42. &lt;head&gt; -->
+      <li>
+        &lt;head&gt;:
+        <!-- ya definido en el head -->
+        (ya definido en el &lt;head&gt;)
+      </li>
+
+      <!-- 43. &lt;header&gt; -->
+      <li>
+        &lt;header&gt;:
+        <header style="background: #eee; padding: 5px">
+          <h2 style="margin: 0">Encabezado</h2>
+        </header>
+      </li>
+
+      <!-- 44. &lt;hr&gt; -->
+      <li>
+        &lt;hr&gt;:
+        <hr style="margin: 5px 0" />
+      </li>
+
+      <!-- 45. &lt;html&gt; -->
+      <li>
+        &lt;html&gt;: (Esta es la etiqueta raíz que engloba todo el documento)
+      </li>
+
+      <!-- 46. &lt;i&gt; -->
+      <li>&lt;i&gt;: Ejemplo: <i>Texto en cursiva</i></li>
+
+      <!-- 47. &lt;iframe&gt; -->
+      <li>
+        &lt;iframe&gt;:
+        <iframe
+          src="https://example.com"
+          width="150"
+          height="100"
+          title="Ejemplo Iframe"
+        ></iframe>
+      </li>
+
+      <!-- 48. &lt;img&gt; -->
+      <li>
+        &lt;img&gt;:
+        <img src="https://via.placeholder.com/50" alt="Imagen de ejemplo" />
+      </li>
+
+      <!-- 49. &lt;input&gt; -->
+      <li>
+        &lt;input&gt;:
+        <input type="text" placeholder="Ingresa texto" />
+      </li>
+
+      <!-- 50. &lt;ins&gt; -->
+      <li>&lt;ins&gt;: Ejemplo: <ins>contenido insertado</ins></li>
+
+      <!-- 51. &lt;kbd&gt; -->
+      <li>&lt;kbd&gt;: Ejemplo: Presiona <kbd>Ctrl</kbd> + <kbd>C</kbd></li>
+
+      <!-- 52. &lt;label&gt; -->
+      <li>
+        &lt;label&gt;:
+        <label for="campo1">Nombre:</label>
+        <input type="text" id="campo1" />
+      </li>
+
+      <!-- 53. &lt;legend&gt; -->
+      <li>
+        &lt;legend&gt;: (Se utiliza dentro de un &lt;fieldset&gt;, como en el
+        ejemplo anterior)
+      </li>
+
+      <!-- 54. &lt;li&gt; -->
+      <li>
+        &lt;li&gt;: Ejemplo:
+        <ul>
+          <li>Elemento de lista interno</li>
+        </ul>
+      </li>
+
+      <!-- 55. &lt;link&gt; -->
+      <li>
+        &lt;link&gt;:
+        <!-- ya definido en el head -->
+        (ya definido en el &lt;head&gt;)
+      </li>
+
+      <!-- 56. &lt;main&gt; -->
+      <li>
+        &lt;main&gt;:
+        <main style="border: 1px dashed #666; padding: 5px">
+          Contenido principal del documento.
+        </main>
+      </li>
+
+      <!-- 57. &lt;map&gt; -->
+      <li>&lt;map&gt;: (Utilizado en el ejemplo de &lt;area&gt;)</li>
+
+      <!-- 58. &lt;mark&gt; -->
+      <li>&lt;mark&gt;: Ejemplo: Texto con <mark>marca resaltada</mark></li>
+
+      <!-- 59. &lt;math&gt; -->
+      <li>
+        &lt;math&gt;:
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <mi>x</mi><mo>=</mo><mn>1</mn>
+        </math>
+      </li>
+
+      <!-- 60. &lt;menu&gt; -->
+      <li>
+        &lt;menu&gt;:
+        <menu>
+          <li>Opción 1</li>
+          <li>Opción 2</li>
+        </menu>
+      </li>
+
+      <!-- 61. &lt;menuitem&gt; -->
+      <li>
+        &lt;menuitem&gt;:
+        <!-- no soportada por html5 -->
+        <!-- no soportada por HTML5: ejemplo simulado -->
+        <p>Opción de menú simulada</p>
+      </li>
+
+      <!-- 62. &lt;meta&gt; -->
+      <li>
+        &lt;meta&gt;:
+        <!-- ya definido en el head -->
+        (ya definido en el &lt;head&gt;)
+      </li>
+
+      <!-- 63. &lt;meter&gt; -->
+      <li>
+        &lt;meter&gt;: Ejemplo: Valor:
+        <meter value="0.5" min="0" max="1">50%</meter>
+      </li>
+
+      <!-- 64. &lt;nav&gt; -->
+      <li>
+        &lt;nav&gt;:
+        <nav style="display: inline">
+          <a href="#a">Inicio</a> |
+          <a href="#fin">Fin</a>
+        </nav>
+      </li>
+
+      <!-- 65. &lt;noscript&gt; -->
+      <li>
+        &lt;noscript&gt;:
+        <noscript>JavaScript está deshabilitado.</noscript>
+      </li>
+
+      <!-- 66. &lt;object&gt; -->
+      <li>
+        &lt;object&gt;:
+        <object
+          data="https://via.placeholder.com/50"
+          type="image/png"
+          width="50"
+          height="50"
+        ></object>
+      </li>
+
+      <!-- 67. &lt;ol&gt; -->
+      <li>
+        &lt;ol&gt;:
+        <ol>
+          <li>Primero</li>
+          <li>Segundo</li>
+        </ol>
+      </li>
+
+      <!-- 68. &lt;optgroup&gt; y &lt;option&gt; -->
+      <li>
+        &lt;optgroup&gt; y &lt;option&gt;:
+        <select>
+          <optgroup label="Grupo 1">
+            <option>Opción 1</option>
+            <option>Opción 2</option>
+          </optgroup>
+        </select>
+      </li>
+
+      <!-- 69. &lt;output&gt; -->
+      <li>
+        &lt;output&gt;: Ejemplo: Resultado: <output name="resultado">42</output>
+      </li>
+
+      <!-- 70. &lt;p&gt; -->
+      <li>
+        &lt;p&gt;:
+        <p>Párrafo de ejemplo.</p>
+      </li>
+
+      <!-- 71. &lt;param&gt; -->
+      <li>
+        &lt;param&gt;:
+        <object data="flash.swf" type="application/x-shockwave-flash">
+          <param name="wmode" value="transparent" />
+        </object>
+      </li>
+
+      <!-- 72. &lt;pre&gt; -->
+      <li>
+        &lt;pre&gt;:
+        <pre>
+Texto preformateado
+   con sangría.</pre
+        >
+      </li>
+
+      <!-- 73. &lt;progress&gt; -->
+      <li>
+        &lt;progress&gt;:
+        <progress value="30" max="100">30%</progress>
+      </li>
+
+      <!-- 74. &lt;q&gt; -->
+      <li>&lt;q&gt;: Ejemplo: <q>Texto citado breve</q></li>
+
+      <!-- 75. &lt;rp&gt; y &lt;rt&gt; -->
+      <li>
+        &lt;rp&gt; y &lt;rt&gt;: Ejemplo en ruby:
+        <ruby>漢<rp>(</rp><rt>kan</rt><rp>)</rp></ruby>
+      </li>
+
+      <!-- 76. &lt;ruby&gt; -->
+      <li>&lt;ruby&gt;: (Se muestra en el ejemplo anterior)</li>
+
+      <!-- 77. &lt;s&gt; -->
+      <li>&lt;s&gt;: Ejemplo: Texto <s>tachado</s></li>
+
+      <!-- 78. &lt;samp&gt; -->
+      <li>&lt;samp&gt;: Ejemplo: <samp>Error en la ejecución</samp></li>
+
+      <!-- 79. &lt;script&gt; -->
+      <li>
+        &lt;script&gt;:
+        <script>
+          console.log("Ejemplo de script");
+        </script>
+        (Revisa la consola del navegador)
+      </li>
+
+      <!-- 80. &lt;section&gt; -->
+      <li>
+        &lt;section&gt;:
+        <section style="border: 1px solid #aaa; padding: 5px">
+          <p>Sección de contenido.</p>
+        </section>
+      </li>
+
+      <!-- 81. &lt;select&gt; -->
+      <li>
+        &lt;select&gt;:
+        <select>
+          <option>Opción A</option>
+          <option>Opción B</option>
+        </select>
+      </li>
+
+      <!-- 82. &lt;slot&gt; -->
+      <li>&lt;slot&gt;: Ejemplo: <slot>Contenido por defecto</slot></li>
+
+      <!-- 83. &lt;small&gt; -->
+      <li>&lt;small&gt;: Ejemplo: <small>Texto en tamaño pequeño</small></li>
+
+      <!-- 84. &lt;source&gt; -->
+      <li>
+        &lt;source&gt;: (Ejemplo dentro de un elemento multimedia, como se
+        muestra en el siguiente ítem)
+      </li>
+
+      <!-- 85. &lt;span&gt; -->
+      <li>
+        &lt;span&gt;: Ejemplo: <span style="color: red">Texto en rojo</span>
+      </li>
+
+      <!-- 86. &lt;strong&gt; -->
+      <li>&lt;strong&gt;: Ejemplo: <strong>Texto de importancia</strong></li>
+
+      <!-- 87. &lt;style&gt; -->
+      <li>
+        &lt;style&gt;:
+        <!-- ya definido en el head -->
+        (ya definido en el &lt;head&gt;)
+      </li>
+
+      <!-- 88. &lt;sub&gt; -->
+      <li>&lt;sub&gt;: Ejemplo: H<sub>2</sub>O</li>
+
+      <!-- 89. &lt;summary&gt; -->
+      <li>
+        &lt;summary&gt;: (Usado dentro de &lt;details&gt;, ver ejemplo en el
+        ítem 24)
+      </li>
+
+      <!-- 90. &lt;sup&gt; -->
+      <li>&lt;sup&gt;: Ejemplo: X<sup>2</sup></li>
+
+      <!-- 91. &lt;svg&gt; -->
+      <li>
+        &lt;svg&gt;:
+        <svg width="50" height="50" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="25" cy="25" r="20" fill="blue" />
+        </svg>
+      </li>
+
+      <!-- 92. &lt;table&gt;, &lt;thead&gt;, &lt;tbody&gt;, &lt;tfoot&gt;, &lt;tr&gt;, &lt;th&gt; y &lt;td&gt; -->
+      <li>
+        &lt;table&gt;:
+        <table border="1">
+          <thead>
+            <tr>
+              <th>Encabezado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Dato</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td>Pie de tabla</td>
+            </tr>
+          </tfoot>
+        </table>
+      </li>
+
+      <!-- 93. &lt;template&gt; -->
+      <li>
+        &lt;template&gt;:
+        <template id="tpl">
+          <p>Contenido del template</p>
+        </template>
+        (Se utiliza mediante JavaScript)
+      </li>
+
+      <!-- 94. &lt;textarea&gt; -->
+      <li>
+        &lt;textarea&gt;:
+        <textarea rows="2" cols="20">Texto dentro de un textarea...</textarea>
+      </li>
+
+      <!-- 95. &lt;time&gt; -->
+      <li>
+        &lt;time&gt;: Ejemplo:
+        <time datetime="2025-04-13T12:00">13 de abril de 2025</time>
+      </li>
+
+      <!-- 96. &lt;title&gt; -->
+      <li>
+        &lt;title&gt;:
+        <!-- ya definido en el head -->
+        (ya definido en el &lt;head&gt;)
+      </li>
+
+      <!-- 97. &lt;tr&gt; (Se incluye en el ejemplo de tabla) -->
+      <li>&lt;tr&gt;: (Se muestra en el ejemplo de &lt;table&gt;)</li>
+
+      <!-- 98. &lt;track&gt; -->
+      <li>
+        &lt;track&gt;:
+        <video controls width="150">
+          <source src="video/ejemplo.mp4" type="video/mp4" />
+          <track kind="subtitles" srclang="es" label="Español" />
+          Tu navegador no soporta video.
+        </video>
+      </li>
+
+      <!-- 99. &lt;u&gt; -->
+      <li>&lt;u&gt;: Ejemplo: <u>Texto subrayado</u></li>
+
+      <!-- 100. &lt;ul&gt; -->
+      <li>
+        &lt;ul&gt;:
+        <ul>
+          <li>Elemento 1</li>
+          <li>Elemento 2</li>
+        </ul>
+      </li>
+
+      <!-- 101. &lt;var&gt; -->
+      <li>&lt;var&gt;: Ejemplo: <var>x</var> = 5</li>
+
+      <!-- 102. &lt;video&gt; -->
+      <li>
+        &lt;video&gt;:
+        <video controls width="150">
+          <source src="video/ejemplo.mp4" type="video/mp4" />
+          Tu navegador no soporta video.
+        </video>
+      </li>
+
+      <!-- 103. &lt;wbr&gt; -->
+      <li>&lt;wbr&gt;: Ejemplo: supercalifragilistic<wbr />expialidocious</li>
+    </ul>
+  </body>
+</html>
