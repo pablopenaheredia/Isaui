@@ -1,0 +1,162 @@
+/* Variables */
+:root {
+  --primary-color: #004080;
+  --secondary-color: #0066cc;
+  --text-color: #333;
+  --light-background: #f9f9f9;
+  --border-color: #ddd;
+  --accent-color: #e0e0e0;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 32px;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  max-width: 80%;
+  margin: 32px auto;
+  padding: 16px;
+  background-color: var(--light-background);
+  color: var(--text-color);
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: var(--spacing-lg);
+  margin-bottom: var(--spacing-md);
+  color: var(--primary-color);
+}
+
+h1 {
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: var(--spacing-sm);
+  font-size: 32px;
+}
+
+p {
+  margin-bottom: var(--spacing-md);
+}
+
+a {
+  color: var(--secondary-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+code, pre, kbd, samp {
+  font-family: monospace;
+  background-color: var(--accent-color);
+  padding: 2px 5px;
+  border-radius: 3px;
+  font-size: 14px;
+}
+
+pre {
+  padding: var(--spacing-md);
+  overflow-x: auto;
+}
+
+mark {
+  background-color: #ffffd0;
+  padding: 0 3px;
+}
+
+/* Lists */
+ul {
+  columns: 3;
+  -webkit-columns: 3;
+  -moz-columns: 3;
+  gap: 32px;
+  padding-left: var(--spacing-md);
+}
+
+li {
+  margin-bottom: 6px;
+  break-inside: avoid;
+}
+
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: var(--spacing-md);
+}
+
+table, th, td {
+  border: 1px solid var(--border-color);
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: var(--accent-color);
+}
+
+caption {
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+button, input, select, textarea {
+  padding: 8px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+}
+
+button {
+  background-color: var(--secondary-color);
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: var(--primary-color);
+}
+
+fieldset {
+  border: 1px solid var(--border-color);
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+}
+
+legend {
+  padding: 0 8px;
+}
+
+img, audio, video, canvas {
+  max-width: 100%;
+  height: auto;
+}
+
+details {
+  margin-bottom: var(--spacing-sm);
+}
+
+summary {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+blockquote {
+  border-left: 3px solid var(--primary-color);
+  padding-left: var(--spacing-md);
+  margin-left: 0;
+  color: #555;
+}
+
+/* Utility Classes */
+.center {
+  text-align: center;
+}
+
+.border {
+  border: 1px solid var(--border-color);
+  padding: var(--spacing-sm);
+}
