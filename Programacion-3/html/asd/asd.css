@@ -1,0 +1,86 @@
+body {
+  font-family: Verdana, "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+h1 {
+  color: #3939d7;
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+h3 {
+  color: #6565b5;
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.articles span p {
+  font-size: 30px;
+  color: rgb(92, 92, 12);
+}
+
+.details1 {
+  font-style: italic;
+}
+
+.articles {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+#hola {
+  text-align: center;
+}
+
+.mundo {
+  text-align: end;
+}
+
+.btn[type="menu"] {
+  background-color: #3939d7;
+  color: rgb(41, 33, 33);
+  padding: 30px 30px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.textarea-container > p {
+  margin: 20px 10px 10px 0px;
+}
+
+.container3 {
+  width: 800px;
+  height: 300px;
+  border: 3px solid orange;
+  background-color: #6565b5;
+  display: flex;
+  justify-content: center;
+  position: sticky;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.container3 div {
+  width: 80px;
+  height: 80px;
+  border: 2px solid white;
+  background-color: black;
+  align-content: center;
+  color: yellow;
+  border-radius: 500px;
+  text-align: center;
+}
