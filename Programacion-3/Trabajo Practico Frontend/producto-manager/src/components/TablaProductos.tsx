@@ -14,7 +14,6 @@ import {
 import { Edit as EditIcon, Delete as DeleteIcon } from '@mui/icons-material';
 import type { Producto } from '../types/Productos';
 import { ServicioProducto } from '../services/ServicioProductos';  
-import { ServicioProducto } from '../services/ServicioProductos';  
 
 interface PropsTabla {
   productos: Producto[];
