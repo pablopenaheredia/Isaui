@@ -90,10 +90,10 @@ const VentanaProducto: React.FC<PropsVentanaProducto> = ({
   };
 
   //regexp
-  const soloPrecios = /^[0-9]*\.?[0-9]*$/; 
+  const soloPrecios = /^[0-9]*\.?[0-9]*$/;  
   const soloEnteros = /^[0-9]*$/;           
 
-  //controlar nums con regexp
+  // uso de regexp en input stock y precio
   const manejarNumeros = (valor: string, patron: RegExp, campo: keyof InfoFormulario) => {
     if (valor === '' || patron.test(valor)) {
       cambiarCampo(campo, valor);
