@@ -8,22 +8,22 @@ import {
   Typography,
 } from '@mui/material';
 
-interface ConfirmDeleteDialogProps {
-  open: boolean;
-  productName: string;
-  onClose: () => void;
-  onConfirm: () => void;
+interface PropsConfirmar {
+  ventanaAbierta: boolean;
+  nombreProducto: string;
+  alCerrar: () => void;
+  alConfirmar: () => void;
 }
 
-const ConfirmDeleteDialog: React.FC<ConfirmDeleteDialogProps> = ({
-  open,
-  productName,
-  onClose,
-  onConfirm,
+const VentanaConfirmar: React.FC<PropsConfirmar> = ({
+  ventanaAbierta,
+  nombreProducto,
+  alCerrar,
+  alConfirmar,
 }) => (
   <Dialog 
-    open={open} 
-    onClose={onClose} 
+    open={ventanaAbierta} 
+    onClose={alCerrar} 
     maxWidth="xs" 
     fullWidth
     PaperProps={{
@@ -41,13 +41,13 @@ const ConfirmDeleteDialog: React.FC<ConfirmDeleteDialogProps> = ({
     
     <DialogContent sx={{ textAlign: 'center', py: 2 }}>
       <Typography variant="body1">
-        ¿Eliminar "{productName}"?
+        ¿Eliminar "{nombreProducto}"?
       </Typography>
     </DialogContent>
     
     <DialogActions sx={{ padding: 2, gap: 1 }}>
       <Button 
-        onClick={onClose} 
+        onClick={alCerrar} 
         variant="outlined" 
         fullWidth
         sx={{ borderRadius: 2 }}
@@ -55,7 +55,7 @@ const ConfirmDeleteDialog: React.FC<ConfirmDeleteDialogProps> = ({
         Cancelar
       </Button>
       <Button 
-        onClick={onConfirm} 
+        onClick={alConfirmar} 
         variant="contained" 
         color="error" 
         fullWidth
@@ -67,4 +67,4 @@ const ConfirmDeleteDialog: React.FC<ConfirmDeleteDialogProps> = ({
   </Dialog>
 );
 
-export default ConfirmDeleteDialog;
+export default VentanaConfirmar;

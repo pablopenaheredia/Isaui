@@ -7,50 +7,56 @@ import {
   Alert,
 } from '@mui/material';
 import { Add as AddIcon } from '@mui/icons-material';
-import ProductTable from './ProductTable';
-import ProductDialog from './ProductDialog'; 
-import ConfirmDeleteDialog from './ConfirmDeleteDialog';
-import type { Product } from '../types/Products';
-import useProducts from '../hooks/useProducts';
-import useProductForm from '../hooks/useProductForm';
+import TablaProductos from './TablaProductos';
+import VentanaProducto from './VentanaProducto'; 
+import VentanaConfirmar from './VentanaConfirmar';
+import type { Producto } from '../types/Productos';
+import useProductos from '../hooks/useProductos';
+import useFormProducto from '../hooks/useFormProducto';
 
-export default function AdmProductos() {
-  const { products, addProduct, updateProduct, deleteProduct } = useProducts();
-  const [deleteIndex, setDeleteIndex] = useState<number | null>(null);
+export default function AdministradorProductos() {
+  const { productos, agregarProducto, editarProducto, borrarProducto } = useProductos();
+  const [indiceBorrar, setIndiceBorrar] = useState<number | null>(null);
   
   const {
-    open,
-    editingIndex,
-    formData,
-    errors,
-    setFormData,
-    setErrors,
-    openDialog,
-    closeDialog,
-  } = useProductForm();
+    ventanaAbierta,
+    editandoIndice,
+    datosForm,
+    errores,
+    setDatosForm,
+    setErrores,
+    abrirVentana,
+    cerrarVentana,
+  } = useFormProducto();
 
-  const handleSaveProduct = (productData: Product) => {
-    if (editingIndex !== null) {
-      updateProduct(editingIndex, productData);
+  const guardarProducto = (nuevoProducto: Producto) => {
+    if (editandoIndice !== null) {
+      editarProducto(editandoIndice, nuevoProducto);
     } else {
-      addProduct(productData);
+      agregarProducto(nuevoProducto);
     }
-    closeDialog();
+    cerrarVentana();
   };
 
-  const handleDeleteClick = (index: number) => {
-    setDeleteIndex(index);
+  const clickBorrar = (indice: number) => {
+    setIndiceBorrar(indice);
   };
 
-  const handleConfirmDelete = () => {
-    if (deleteIndex !== null) {
-      deleteProduct(deleteIndex);
-      setDeleteIndex(null);
+  const confirmarBorrar = () => {
+    if (indiceBorrar !== null) {
+      borrarProducto(indiceBorrar);
+      setIndiceBorrar(null);
     }
   };
 
-  const handleCloseDeleteDialog = () => {
-    setDeleteIndex(null);
+  const cancelarBorrar = () => {
+    setIndiceBorrar(null);
+  };
+
+  const obtenerNombre = (): string => {
+    return indiceBorrar !== null 
+      ? (productos[indiceBorrar]?.nombre || '') 
+      : '';
   };
 
   return (
@@ -103,7 +109,7 @@ export default function AdmProductos() {
           <Button
             variant="contained"
             startIcon={<AddIcon />}
-            onClick={() => openDialog()}
+            onClick={() => abrirVentana()}
             sx={{ 
               flexShrink: 0,
               backgroundColor: 'white',
@@ -116,7 +122,7 @@ export default function AdmProductos() {
         </Box>
 
         <Box sx={{ width: '100%', maxWidth: '1200px' }}>
-          {products.length === 0 ? (
+          {productos.length === 0 ? (
             <Alert 
               severity="info" 
               sx={{ 
@@ -129,30 +135,30 @@ export default function AdmProductos() {
               No tienes productos en tu inventario.
             </Alert>
           ) : (
-            <ProductTable 
-              products={products}
-              onEdit={openDialog}
-              onDelete={handleDeleteClick}
+            <TablaProductos 
+              productos={productos}
+              alEditar={abrirVentana}
+              alBorrar={clickBorrar}
             />
           )}
         </Box>
 
-        <ProductDialog
-          open={open}
-          editingIndex={editingIndex}
-          formData={formData}
-          setFormData={setFormData}
-          errors={errors}
-          setErrors={setErrors}
-          onClose={closeDialog}
-          onSave={handleSaveProduct}
+        <VentanaProducto
+          ventanaAbierta={ventanaAbierta}
+          editandoIndice={editandoIndice}
+          datosForm={datosForm}
+          setDatosForm={setDatosForm}
+          errores={errores}
+          setErrores={setErrores}
+          alCerrar={cerrarVentana}
+          alGuardar={guardarProducto}
         />
 
-        <ConfirmDeleteDialog
-          open={deleteIndex !== null}
-          productName={deleteIndex !== null ? (products[deleteIndex]?.nombre || '') : ''}
-          onClose={handleCloseDeleteDialog}
-          onConfirm={handleConfirmDelete}
+        <VentanaConfirmar
+          ventanaAbierta={indiceBorrar !== null}
+          nombreProducto={obtenerNombre()}
+          alCerrar={cancelarBorrar}
+          alConfirmar={confirmarBorrar}
         />
       </Container>
     </Box>

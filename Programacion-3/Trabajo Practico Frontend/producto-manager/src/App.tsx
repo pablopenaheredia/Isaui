@@ -1,5 +1,5 @@
 import { ThemeProvider, createTheme, CssBaseline } from '@mui/material';
-import AdmProductos from './components/AdmProductos';
+import AdministradorProductos from './components/AdministradorProductos';
 
 const theme = createTheme();
 
@@ -7,7 +7,7 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <AdmProductos />
+      <AdministradorProductos />
     </ThemeProvider>
   );
 }
