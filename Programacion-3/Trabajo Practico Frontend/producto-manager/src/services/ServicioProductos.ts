@@ -1,6 +1,6 @@
 import type { Producto } from '../types/Productos';
 
-export class ServicioProducto {  // ✅ Cambio aquí: ProductService → ServicioProducto
+export class ServicioProducto {  
   static mostrarPrecio = (precio: number): string => `$${precio.toFixed(2)}`;
 
   static estadoStock = (stock: number): 'error' | 'warning' | 'success' => 

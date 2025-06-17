@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import type { Producto } from '../types/Products';
+import type { Producto } from '../types/Productos';
 
 const productosBase: Producto[] = [
   { nombre: "Laptop HP", precio: 899.99, stock: 15 },
