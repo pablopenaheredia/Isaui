@@ -1,48 +1,31 @@
 import { useState } from 'react';
-import type { Producto, InfoFormulario, ErroresForm } from '../types/Productos';
+import type { Producto } from '../types/Productos';
 
 const useFormProducto = () => {
   const [ventanaAbierta, setVentanaAbierta] = useState(false);
-  const [editandoIndice, setEditandoIndice] = useState<number | null>(null);
-  const [datosForm, setDatosForm] = useState<InfoFormulario>({
-    nombre: "",
-    precio: "",
-    stock: "",
-  });
-  const [errores, setErrores] = useState<ErroresForm>({});
+  const [productoEditar, setProductoEditar] = useState<Producto | undefined>();
 
-  const abrirVentana = (producto?: Producto, indice?: number) => {
-    if (producto && indice !== undefined) {
-      setEditandoIndice(indice);
-      setDatosForm({
-        nombre: producto.nombre,
-        precio: producto.precio.toString(),
-        stock: producto.stock.toString(),
-      });
-    } else {
-      setEditandoIndice(null);
-      setDatosForm({ nombre: "", precio: "", stock: "" });
-    }
-    setErrores({});
+  const abrirCrear = () => {
+    setProductoEditar(undefined);
     setVentanaAbierta(true);
   };
 
-  const cerrarVentana = () => {
+  const abrirEditar = (producto: Producto) => {
+    setProductoEditar(producto);
+    setVentanaAbierta(true);
+  };
+
+  const cerrar = () => {
     setVentanaAbierta(false);
-    setEditandoIndice(null);
-    setDatosForm({ nombre: "", precio: "", stock: "" });
-    setErrores({});
+    setProductoEditar(undefined);
   };
 
   return {
     ventanaAbierta,
-    editandoIndice,
-    datosForm,
-    errores,
-    setDatosForm,
-    setErrores,
-    abrirVentana,
-    cerrarVentana,
+    productoEditar,
+    abrirCrear,
+    abrirEditar,
+    cerrar,
   };
 };
 

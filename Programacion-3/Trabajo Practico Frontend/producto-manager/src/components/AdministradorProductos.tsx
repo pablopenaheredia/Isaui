@@ -16,47 +16,33 @@ import useFormProducto from '../hooks/useFormProducto';
 
 export default function AdministradorProductos() {
   const { productos, agregarProducto, editarProducto, borrarProducto } = useProductos();
-  const [indiceBorrar, setIndiceBorrar] = useState<number | null>(null);
-  
-  const {
-    ventanaAbierta,
-    editandoIndice,
-    datosForm,
-    errores,
-    setDatosForm,
-    setErrores,
-    abrirVentana,
-    cerrarVentana,
-  } = useFormProducto();
+  const { ventanaAbierta, productoEditar, abrirCrear, abrirEditar, cerrar } = useFormProducto();
+  const [productoABorrar, setProductoABorrar] = useState<Producto | null>(null);
 
-  const guardarProducto = (nuevoProducto: Producto) => {
-    if (editandoIndice !== null) {
-      editarProducto(editandoIndice, nuevoProducto);
+  const guardarProducto = (nuevoProducto: Omit<Producto, 'id'>) => {
+    if (productoEditar) {
+      editarProducto(productoEditar.id, nuevoProducto);
     } else {
       agregarProducto(nuevoProducto);
     }
-    cerrarVentana();
   };
 
-  const clickBorrar = (indice: number) => {
-    setIndiceBorrar(indice);
+  const clickBorrar = (id: string) => {
+    const producto = productos.find(p => p.id === id);
+    if (producto) {
+      setProductoABorrar(producto);
+    }
   };
 
   const confirmarBorrar = () => {
-    if (indiceBorrar !== null) {
-      borrarProducto(indiceBorrar);
-      setIndiceBorrar(null);
+    if (productoABorrar) {
+      borrarProducto(productoABorrar.id);
+      setProductoABorrar(null);
     }
   };
 
   const cancelarBorrar = () => {
-    setIndiceBorrar(null);
-  };
-
-  const obtenerNombre = (): string => {
-    return indiceBorrar !== null 
-      ? (productos[indiceBorrar]?.nombre || '') 
-      : '';
+    setProductoABorrar(null);
   };
 
   return (
@@ -109,7 +95,7 @@ export default function AdministradorProductos() {
           <Button
             variant="contained"
             startIcon={<AddIcon />}
-            onClick={() => abrirVentana()}
+            onClick={abrirCrear}
             sx={{ 
               flexShrink: 0,
               backgroundColor: 'white',
@@ -137,7 +123,7 @@ export default function AdministradorProductos() {
           ) : (
             <TablaProductos 
               productos={productos}
-              alEditar={abrirVentana}
+              alEditar={abrirEditar}
               alBorrar={clickBorrar}
             />
           )}
@@ -145,18 +131,14 @@ export default function AdministradorProductos() {
 
         <VentanaProducto
           ventanaAbierta={ventanaAbierta}
-          editandoIndice={editandoIndice}
-          datosForm={datosForm}
-          setDatosForm={setDatosForm}
-          errores={errores}
-          setErrores={setErrores}
-          alCerrar={cerrarVentana}
+          productoEditar={productoEditar}
+          alCerrar={cerrar}
           alGuardar={guardarProducto}
         />
 
         <VentanaConfirmar
-          ventanaAbierta={indiceBorrar !== null}
-          nombreProducto={obtenerNombre()}
+          ventanaAbierta={productoABorrar !== null}
+          nombreProducto={productoABorrar?.nombre || ''}
           alCerrar={cancelarBorrar}
           alConfirmar={confirmarBorrar}
         />

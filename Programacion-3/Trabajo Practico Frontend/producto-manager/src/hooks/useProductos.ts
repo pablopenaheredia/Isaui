@@ -2,63 +2,59 @@ import { useState, useEffect } from 'react';
 import type { Producto } from '../types/Productos';
 
 const productosBase: Producto[] = [
-  { nombre: "Laptop HP", precio: 899.99, stock: 15 },
-  { nombre: "Mouse Logitech", precio: 25.5, stock: 50 },
-  { nombre: "Ram", precio: 120.0, stock: 0 },
+  { id: '1', nombre: "Laptop HP", precio: 899.99, stock: 15 },
+  { id: '2', nombre: "Mouse Logitech", precio: 25.5, stock: 50 },
+  { id: '3', nombre: "Ram", precio: 120.0, stock: 0 },
 ];
 
 const CLAVE_STORAGE = 'mis-productos';
+const CLAVE_CONTADOR = 'contador-productos';
 
 const useProductos = () => {
   const [productos, setProductos] = useState<Producto[]>(() => {
-    try {
-      const productosGuardados = localStorage.getItem(CLAVE_STORAGE);
-      if (productosGuardados) {
-        return JSON.parse(productosGuardados);
-      }
-    } catch (error) {
-      console.error('Error cargando productos:', error);
-    }
-    return productosBase;
+    const productosGuardados = localStorage.getItem(CLAVE_STORAGE);
+    return productosGuardados ? JSON.parse(productosGuardados) //convierte un json en un array de objetos
+    : productosBase;
+  });
+
+  const [contador, setContador] = useState(() => {
+    const contadorGuardado = localStorage.getItem(CLAVE_CONTADOR);
+    return contadorGuardado ? parseInt(contadorGuardado) : 4;
   });
 
   useEffect(() => {
-    try {
-      localStorage.setItem(CLAVE_STORAGE, JSON.stringify(productos));
-    } catch (error) {
-      console.error('Error guardando productos:', error);
-    }
+    localStorage.setItem(CLAVE_STORAGE, JSON.stringify(productos));
   }, [productos]);
 
-  const agregarProducto = (nuevoProducto: Producto) => {
-    setProductos(prev => [...prev, nuevoProducto]);
+  useEffect(() => {
+    localStorage.setItem(CLAVE_CONTADOR, contador.toString());
+  }, [contador]);
+
+  const generateId = (): string => {
+    const nuevoId = contador.toString();
+    setContador(prev => prev + 1);
+    return nuevoId;
   };
 
-  const editarProducto = (indice: number, productoEditado: Producto) => {
-    setProductos(prev => {
-      const nuevaLista = [];
-      for (let i = 0; i < prev.length; i++) {
-        if (i === indice) {
-          nuevaLista.push(productoEditado);
-        } else {
-          nuevaLista.push(prev[i]);
-        }
-      }
-      return nuevaLista;
-    });
+  const agregarProducto = (nuevoProducto: Omit<Producto, 'id'>) => {
+    const productoConId: Producto = {
+      ...nuevoProducto,
+      id: generateId()
+    };
+    setProductos(prev => [...prev, productoConId]);
   };
 
-  const borrarProducto = (indice: number) => {
-    setProductos(prev => {
-      const listaFiltrada = [];
-      for (let i = 0; i < prev.length; i++) {
-        if (i !== indice) {
-          listaFiltrada.push(prev[i]);
-        }
-      }
-      return listaFiltrada;
-    });
+  const editarProducto = (id: string, productoEditado: Omit<Producto, 'id'>) => {
+    setProductos(lista => 
+      lista.map(producto => 
+        producto.id === id ? { ...productoEditado, id } : producto
+      )
+    );
   };
+
+  const borrarProducto = (id: string) => {
+    setProductos(lista => lista.filter(producto => producto.id !== id));
+  };//react no permite  borrar un elemento por como funciona el estado asi que se genera una nueva lista sin el producto del id que se borra, solo detecta cambios con un array nuevo
 
   return {
     productos,

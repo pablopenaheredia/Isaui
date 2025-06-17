@@ -13,12 +13,12 @@ import {
 } from '@mui/material';
 import { Edit as EditIcon, Delete as DeleteIcon } from '@mui/icons-material';
 import type { Producto } from '../types/Productos';
-import { ServicioProducto } from '../services/ServicioProductos';  
+import { ServicioProducto } from '../services/ServicioProductos';
 
 interface PropsTabla {
   productos: Producto[];
-  alEditar: (producto: Producto, indice: number) => void;
-  alBorrar: (indice: number) => void;
+  alEditar: (producto: Producto) => void;
+  alBorrar: (id: string) => void;
 }
 
 const TablaProductos: React.FC<PropsTabla> = ({ productos, alEditar, alBorrar }) => {
@@ -52,8 +52,8 @@ const TablaProductos: React.FC<PropsTabla> = ({ productos, alEditar, alBorrar })
           </TableRow>
         </TableHead>
         <TableBody>
-          {productos.map((producto, indice) => (
-            <TableRow key={indice} hover>
+          {productos.map((producto) => (
+            <TableRow key={producto.id} hover>
               <TableCell>
                 <Typography variant="body1" fontWeight="medium">
                   {producto.nombre}
@@ -69,14 +69,14 @@ const TablaProductos: React.FC<PropsTabla> = ({ productos, alEditar, alBorrar })
               <TableCell align="center">
                 <IconButton 
                   color="primary" 
-                  onClick={() => alEditar(producto, indice)} 
+                  onClick={() => alEditar(producto)} 
                   size="small"
                 >
                   <EditIcon />
                 </IconButton>
                 <IconButton 
                   color="error" 
-                  onClick={() => alBorrar(indice)} 
+                  onClick={() => alBorrar(producto.id)} 
                   size="small"
                 >
                   <DeleteIcon />

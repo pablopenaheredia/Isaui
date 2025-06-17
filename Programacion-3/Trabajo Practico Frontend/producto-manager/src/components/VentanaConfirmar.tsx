@@ -21,48 +21,14 @@ const VentanaConfirmar: React.FC<PropsConfirmar> = ({
   alCerrar,
   alConfirmar,
 }) => (
-  <Dialog 
-    open={ventanaAbierta} 
-    onClose={alCerrar} 
-    maxWidth="xs" 
-    fullWidth
-    PaperProps={{
-      sx: {
-        borderRadius: 2,
-        padding: 1
-      }
-    }}
-  >
-    <DialogTitle sx={{ textAlign: 'center', pb: 1 }}>
-      <Typography variant="h6" fontWeight="bold">
-        Eliminar Producto
-      </Typography>
-    </DialogTitle>
-    
-    <DialogContent sx={{ textAlign: 'center', py: 2 }}>
-      <Typography variant="body1">
-        ¿Eliminar "{nombreProducto}"?
-      </Typography>
+  <Dialog open={ventanaAbierta} onClose={alCerrar}>
+    <DialogTitle>Eliminar Producto</DialogTitle>
+    <DialogContent>
+      <Typography>¿Eliminar "{nombreProducto}"?</Typography>
     </DialogContent>
-    
-    <DialogActions sx={{ padding: 2, gap: 1 }}>
-      <Button 
-        onClick={alCerrar} 
-        variant="outlined" 
-        fullWidth
-        sx={{ borderRadius: 2 }}
-      >
-        Cancelar
-      </Button>
-      <Button 
-        onClick={alConfirmar} 
-        variant="contained" 
-        color="error" 
-        fullWidth
-        sx={{ borderRadius: 2 }}
-      >
-        Eliminar
-      </Button>
+    <DialogActions>
+      <Button onClick={alCerrar}>Cancelar</Button>
+      <Button onClick={alConfirmar} color="error">Eliminar</Button>
     </DialogActions>
   </Dialog>
 );

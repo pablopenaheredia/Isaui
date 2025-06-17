@@ -1,68 +1,68 @@
-import React, { useEffect } from 'react';
-import {
-  Dialog,
-  DialogTitle,
-  DialogContent,
-  DialogActions,
-  TextField,
-  Button,
-  Box,
-} from '@mui/material';
-import type { Producto, InfoFormulario, ErroresForm } from '../types/Productos';
+import React, { useState, useEffect } from 'react';
+import { Dialog, DialogTitle, DialogContent, DialogActions, TextField, Button, Box } from '@mui/material';
+import type { Producto, ErroresForm } from '../types/Productos';
 
-interface PropsVentanaProducto {
+interface PropsVentana {
   ventanaAbierta: boolean;
-  editandoIndice: number | null;
-  datosForm: InfoFormulario;
-  setDatosForm: (datos: InfoFormulario) => void;
-  errores: ErroresForm;
-  setErrores: (errores: ErroresForm) => void;
+  productoEditar?: Producto; //por defecto undefined
   alCerrar: () => void;
-  alGuardar: (producto: Producto) => void;
+  alGuardar: (producto: Omit<Producto, 'id'>) => void;
 }
 
-const VentanaProducto: React.FC<PropsVentanaProducto> = ({
+const VentanaProducto: React.FC<PropsVentana> = ({
   ventanaAbierta,
-  editandoIndice,
-  datosForm,
-  setDatosForm,
-  errores,
-  setErrores,
+  productoEditar,
   alCerrar,
   alGuardar,
 }) => {
+  const [nombre, setNombre] = useState('');
+  const [precio, setPrecio] = useState('');
+  const [stock, setStock] = useState('');
+  const [errores, setErrores] = useState<ErroresForm>({});
+
+  const soloPrecios = /^[0-9]*\.?[0-9]*$/;
+  const soloEnteros = /^[0-9]*$/;
+
   useEffect(() => {
-    if (editandoIndice === null) {
-      setDatosForm({ nombre: '', precio: '', stock: '' });
+    if (ventanaAbierta) {
+      if (productoEditar) {
+        setNombre(productoEditar.nombre);
+        setPrecio(productoEditar.precio.toString());
+        setStock(productoEditar.stock.toString());
+      } else {
+        setNombre('');
+        setPrecio('');
+        setStock('');
+      }
+      setErrores({});
     }
-    setErrores({});
-  }, [editandoIndice, setDatosForm, setErrores]);
+  }, [ventanaAbierta, productoEditar]);
 
   const revisarForm = (): boolean => {
     const erroresEncontrados: ErroresForm = {};
 
-    if (!datosForm.nombre.trim()) {
+    if (!nombre.trim()) {
       erroresEncontrados.nombre = 'El nombre es requerido';
-    } else if (datosForm.nombre.trim().length < 2) {
+    } else if (nombre.trim().length < 2) {
       erroresEncontrados.nombre = 'El nombre debe tener al menos 2 caracteres';
-    } else if (datosForm.nombre.trim().length > 30) {
+    } else if (nombre.trim().length > 30) {
       erroresEncontrados.nombre = 'El nombre no puede exceder los 30 caracteres';
     }
 
-    if (!datosForm.precio.trim()) {
+    if (!precio.trim()) {
       erroresEncontrados.precio = 'El precio es requerido';
     } else {
-      const precio = parseFloat(datosForm.precio);
-      if (isNaN(precio) || precio <= 0) {
+      const precioNum = parseFloat(precio);
+      if (isNaN(precioNum) || precioNum <= 0) {
         erroresEncontrados.precio = 'El precio debe ser mayor a 0';
       }
     }
 
-    if (!datosForm.stock.trim()) {
+    if (!stock.trim()) {
       erroresEncontrados.stock = 'El stock es requerido';
     } else {
-      const stock = parseInt(datosForm.stock);
-      if (isNaN(stock) || stock < 0) {
+      const stockNum = parseInt(stock);
+      if (isNaN(stockNum) || stockNum < 0) {
         erroresEncontrados.stock = 'El stock no puede ser negativo';
       }
     }
@@ -73,32 +73,37 @@ const VentanaProducto: React.FC<PropsVentanaProducto> = ({
 
   const enviarForm = () => {
     if (revisarForm()) {
-      const productoCompleto: Producto = {
-        nombre: datosForm.nombre.trim(),
-        precio: parseFloat(datosForm.precio),
-        stock: parseInt(datosForm.stock),
+      const productoCompleto = {
+        nombre: nombre.trim(),
+        precio: parseFloat(precio),
+        stock: parseInt(stock),
       };
       alGuardar(productoCompleto);
+      alCerrar();
     }
   };
 
-  const cambiarCampo = (campo: keyof InfoFormulario, valor: string) => {
-    setDatosForm({ ...datosForm, [campo]: valor });
-    if (errores[campo]) {
-      setErrores({ ...errores, [campo]: undefined });
+  const cambiarInput = (input: string, valor: string) => {
+    if (input === 'nombre') {
+      setNombre(valor);
+    } else if (input === 'precio') {
+      setPrecio(valor);
+    } else if (input === 'stock') {
+      setStock(valor);
+    }
+
+    if (errores[input as keyof ErroresForm]) {
+      setErrores({ ...errores, [input]: undefined });
     }
   };
 
-  //regexp
-  const soloPrecios = /^[0-9]*\.?[0-9]*$/;  
-  const soloEnteros = /^[0-9]*$/;           
+  const manejarNumeros = (valor: string, patron: RegExp, input: string) => {
+  if (valor === '' || valor.match(patron)) {
+    cambiarInput(input, valor);
+  }
+};
 
-  // uso de regexp en input stock y precio
-  const manejarNumeros = (valor: string, patron: RegExp, campo: keyof InfoFormulario) => {
-    if (valor === '' || patron.test(valor)) {
-      cambiarCampo(campo, valor);
-    }
-  };
+  const siEdito = productoEditar !== undefined;
 
   return (
     <Dialog 
@@ -109,48 +114,54 @@ const VentanaProducto: React.FC<PropsVentanaProducto> = ({
       PaperProps={{ sx: { borderRadius: 3, padding: 2 } }}
     >
       <DialogTitle sx={{ textAlign: 'center', fontSize: '1.5rem', fontWeight: 'bold' }}>
-        {editandoIndice !== null ? 'Editar Producto' : 'Nuevo Producto'}
+        {siEdito ? 'Editar Producto' : 'Nuevo Producto'}
       </DialogTitle>
       
       <DialogContent>
         <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3, mt: 2 }}>
           <TextField
             label="Nombre del Producto"
-            value={datosForm.nombre}
-            onChange={(e) => cambiarCampo('nombre', e.target.value)}
+            value={nombre}
+            onChange={(e) => cambiarInput('nombre', e.target.value)}
             error={!!errores.nombre}
-            helperText={errores.nombre || `${datosForm.nombre.length}/30 caracteres`}
+            helperText={errores.nombre || `${nombre.length}/30 caracteres`}
             fullWidth
-            inputProps={{ maxLength: 30 }}
+            slotProps={{
+              htmlInput: { maxLength: 30 }
+            }}
           />
           
           <TextField
             label="Precio"
             type="text"
-            value={datosForm.precio}
+            value={precio}
             onChange={(e) => manejarNumeros(e.target.value, soloPrecios, 'precio')}
-            error={!!errores.precio}
+            error={!!errores.precio} // doble ! lo convierte a booleano
             helperText={errores.precio}
             fullWidth
             placeholder="0.00"
-            inputProps={{ 
-              inputMode: 'decimal',
-              pattern: '[0-9]*[.]?[0-9]*'
+            slotProps={{
+              htmlInput: { 
+                inputMode: 'decimal',
+                pattern: '[0-9]*[.]?[0-9]*'
+              }
             }}
           />
           
           <TextField
             label="Stock"
             type="text"
-            value={datosForm.stock}
+            value={stock}
             onChange={(e) => manejarNumeros(e.target.value, soloEnteros, 'stock')}
             error={!!errores.stock}
             helperText={errores.stock}
             fullWidth
             placeholder="0"
-            inputProps={{ 
-              inputMode: 'numeric',
-              pattern: '[0-9]*'
+            slotProps={{
+              htmlInput: { 
+                inputMode: 'decimal',
+                pattern: '[0-9]*[.]?[0-9]*'
+              }
             }}
           />
         </Box>
@@ -161,7 +172,7 @@ const VentanaProducto: React.FC<PropsVentanaProducto> = ({
           Cancelar
         </Button>
         <Button onClick={enviarForm} variant="contained" fullWidth>
-          {editandoIndice !== null ? 'Actualizar' : 'Crear'}
+          {siEdito ? 'Actualizar' : 'Crear'}
         </Button>
       </DialogActions>
     </Dialog>
