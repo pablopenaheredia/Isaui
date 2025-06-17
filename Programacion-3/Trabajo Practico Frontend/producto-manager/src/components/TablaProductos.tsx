@@ -13,7 +13,7 @@ import {
 } from '@mui/material';
 import { Edit as EditIcon, Delete as DeleteIcon } from '@mui/icons-material';
 import type { Producto } from '../types/Productos';
-import { ServicioProducto } from '../services/ServicioProductos';  // ✅ Cambio aquí
+import { ServicioProducto } from '../services/ServicioProductos';  
 
 interface PropsTabla {
   productos: Producto[];
@@ -24,8 +24,8 @@ interface PropsTabla {
 const TablaProductos: React.FC<PropsTabla> = ({ productos, alEditar, alBorrar }) => {
   const mostrarChipStock = (stock: number) => (
     <Chip 
-      label={ServicioProducto.textoStock(stock)}    // ✅ Usar ProductService
-      color={ServicioProducto.estadoStock(stock)}   // ✅ Usar ProductService
+      label={ServicioProducto.textoStock(stock)}    
+      color={ServicioProducto.estadoStock(stock)}  
       size="small" 
     />
   );
@@ -61,7 +61,7 @@ const TablaProductos: React.FC<PropsTabla> = ({ productos, alEditar, alBorrar })
               </TableCell>
               <TableCell align="right">
                 <Typography variant="body1" color="primary" fontWeight="bold">
-                  {ServicioProducto.mostrarPrecio(producto.precio)}  {/* ✅ Usar ProductService */}
+                  {ServicioProducto.mostrarPrecio(producto.precio)}  
                 </Typography>
               </TableCell>
               <TableCell align="center">{producto.stock}</TableCell>
