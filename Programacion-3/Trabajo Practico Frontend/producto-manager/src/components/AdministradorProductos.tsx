@@ -8,7 +8,6 @@ import type { Producto } from '../types/Productos';
 import useProductos from '../hooks/useProductos';
 import useFormProducto from '../hooks/useFormProducto';
 
-// ✨ SIMPLIFICADO: Estilos como constantes
 const containerWidth = { width: '100%', maxWidth: '1200px' };
 
 const gradientBackground = {
@@ -50,7 +49,7 @@ export default function AdministradorProductos() {
       setProductoABorrar(null);
     }
   };
-  
+
   const cancelarBorrar = () => setProductoABorrar(null);
 
   return (
