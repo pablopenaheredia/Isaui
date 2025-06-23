@@ -1,19 +1,8 @@
 import React from 'react';
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableContainer,
-  TableHead,
-  TableRow,
-  Paper,
-  IconButton,
-  Typography,
-  Chip,
-} from '@mui/material';
+import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, IconButton, Typography, Chip } from '@mui/material';
 import { Edit as EditIcon, Delete as DeleteIcon } from '@mui/icons-material';
 import type { Producto } from '../types/Productos';
-import { ServicioProducto } from '../services/ServicioProductos';
+import { mostrarPrecio, estadoStock, textoStock } from '../services/ServicioProductos'; 
 
 interface PropsTabla {
   productos: Producto[];
@@ -21,26 +10,15 @@ interface PropsTabla {
   alBorrar: (id: string) => void;
 }
 
+const estiloEncabezado = { color: "white", fontWeight: "bold" };
+
 const TablaProductos: React.FC<PropsTabla> = ({ productos, alEditar, alBorrar }) => {
   const mostrarChipStock = (stock: number) => (
-    <Chip 
-      label={ServicioProducto.textoStock(stock)}   
-      color={ServicioProducto.estadoStock(stock)}   
-      size="small" 
-    />
+    <Chip label={textoStock(stock)} color={estadoStock(stock)} size="small" />
   );
 
-  const estiloEncabezado = { color: "white", fontWeight: "bold" };
-
   return (
-    <TableContainer 
-      component={Paper} 
-      elevation={2}
-      sx={{ 
-        backgroundColor: '#f5f5f5',
-        '& .MuiTable-root': { backgroundColor: 'white' }
-      }}
-    >
+    <TableContainer component={Paper} elevation={2} sx={{ backgroundColor: '#f5f5f5', '& .MuiTable-root': { backgroundColor: 'white' } }}>
       <Table>
         <TableHead>
           <TableRow sx={{ backgroundColor: "primary.main" }}>
@@ -55,30 +33,20 @@ const TablaProductos: React.FC<PropsTabla> = ({ productos, alEditar, alBorrar })
           {productos.map((producto) => (
             <TableRow key={producto.id} hover>
               <TableCell>
-                <Typography variant="body1" fontWeight="medium">
-                  {producto.nombre}
-                </Typography>
+                <Typography variant="body1" fontWeight="medium">{producto.nombre}</Typography>
               </TableCell>
               <TableCell align="right">
                 <Typography variant="body1" color="primary" fontWeight="bold">
-                  {ServicioProducto.mostrarPrecio(producto.precio)}
+                  {mostrarPrecio(producto.precio)}
                 </Typography>
               </TableCell>
               <TableCell align="center">{producto.stock}</TableCell>
               <TableCell align="center">{mostrarChipStock(producto.stock)}</TableCell>
               <TableCell align="center">
-                <IconButton 
-                  color="primary" 
-                  onClick={() => alEditar(producto)} 
-                  size="small"
-                >
+                <IconButton color="primary" onClick={() => alEditar(producto)} size="small">
                   <EditIcon />
                 </IconButton>
-                <IconButton 
-                  color="error" 
-                  onClick={() => alBorrar(producto.id)} 
-                  size="small"
-                >
+                <IconButton color="error" onClick={() => alBorrar(producto.id)} size="small">
                   <DeleteIcon />
                 </IconButton>
               </TableCell>

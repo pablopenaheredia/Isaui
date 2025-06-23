@@ -20,13 +20,7 @@ const useFormProducto = () => {
     setProductoEditar(undefined);
   };
 
-  return {
-    ventanaAbierta,
-    productoEditar,
-    abrirCrear,
-    abrirEditar,
-    cerrar,
-  };
+  return {ventanaAbierta, productoEditar, abrirCrear, abrirEditar, cerrar};
 };
 
 export default useFormProducto;
