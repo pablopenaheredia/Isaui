@@ -7,7 +7,7 @@ export interface Producto {
 
 export interface InfoFormulario {
   nombre: string;
-  precio: string;
+  precio: string;//tanto precio como son strings ya que se manejan como texto en el formulario
   stock: string;
 }
 

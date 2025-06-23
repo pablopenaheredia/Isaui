@@ -23,21 +23,21 @@ const useProductos = () => {
   });
 
   useEffect(() => {
-    localStorage.setItem(CLAVE_STORAGE, JSON.stringify(productos));
+    localStorage.setItem(CLAVE_STORAGE, JSON.stringify(productos)); //convierte string a .json
     localStorage.setItem(CLAVE_CONTADOR, contador.toString());
   }, [productos, contador]);
 
   
   const generateId = (): string => {
     const nuevoId = contador.toString();
-    setContador(prev => prev + 1);
+    setContador(c => c + 1);
     return nuevoId;
   };
 
   const agregarProducto = (nuevoProducto: Omit<Producto, 'id'>) => {
     const productoConId: Producto = {...nuevoProducto, id: generateId()
     };
-    setProductos(prev => [...prev, productoConId]);
+    setProductos(productos => [...productos, productoConId]);
   };
 
   const editarProducto = (id: string, productoEditado: Omit<Producto, 'id'>) => {
@@ -50,7 +50,8 @@ const useProductos = () => {
 
   const borrarProducto = (id: string) => {
     setProductos(lista => lista.filter(producto => producto.id !== id));
-  };//react no permite  borrar un elemento por como funciona el estado asi que se genera una nueva lista sin el producto del id que se borra, solo detecta cambios con un array nuevo
+  };//react no permite  borrar un elemento por como funciona el estado asi que se genera una nueva lista con .filter
+  // sin el producto del id que se borra, solo detecta cambios con un array nuevo manteniendo todos excepto el del id que se borra
 
   return {productos, agregarProducto, editarProducto, borrarProducto};
 };

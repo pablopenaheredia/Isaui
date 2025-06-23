@@ -15,7 +15,7 @@ const VentanaProducto: React.FC<PropsVentana> = ({
   alCerrar,
   alGuardar,
 }) => {
-  const [nombre, setNombre] = useState('');
+  const [nombre, setNombre] = useState(''); //se pone string vacia porque viene de los inputs
   const [precio, setPrecio] = useState('');
   const [stock, setStock] = useState('');
   const [errores, setErrores] = useState<ErroresForm>({});
@@ -42,7 +42,7 @@ const VentanaProducto: React.FC<PropsVentana> = ({
     const erroresEncontrados: ErroresForm = {};
 
     if (!nombre.trim()) {
-      erroresEncontrados.nombre = 'El nombre es requerido';
+      erroresEncontrados.nombre = 'Nombre requerido';
     } else if (nombre.trim().length < 2) {
       erroresEncontrados.nombre = 'El nombre debe tener al menos 2 caracteres';
     } else if (nombre.trim().length > 30) {
@@ -50,7 +50,7 @@ const VentanaProducto: React.FC<PropsVentana> = ({
     }
 
     if (!precio.trim()) {
-      erroresEncontrados.precio = 'El precio es requerido';
+      erroresEncontrados.precio = 'Precio requerido';
     } else {
       const precioNum = parseFloat(precio);
       if (isNaN(precioNum) || precioNum <= 0) {
@@ -59,7 +59,7 @@ const VentanaProducto: React.FC<PropsVentana> = ({
     }
 
     if (!stock.trim()) {
-      erroresEncontrados.stock = 'El stock es requerido';
+      erroresEncontrados.stock = 'Stock requerido';
     } else {
       const stockNum = parseInt(stock);
       if (isNaN(stockNum) || stockNum < 0) {
@@ -83,7 +83,7 @@ const VentanaProducto: React.FC<PropsVentana> = ({
     }
   };
 
-  const cambiarInput = (input: string, valor: string) => {
+  const actualizarCampo = (input: string, valor: string) => {
     if (input === 'nombre') {
       setNombre(valor);
     } else if (input === 'precio') {
@@ -99,7 +99,7 @@ const VentanaProducto: React.FC<PropsVentana> = ({
 
   const manejarNumeros = (valor: string, patron: RegExp, input: string) => {
   if (valor === '' || valor.match(patron)) {
-    cambiarInput(input, valor);
+    actualizarCampo(input, valor);
   }
 };
 
@@ -122,7 +122,7 @@ const VentanaProducto: React.FC<PropsVentana> = ({
           <TextField
             label="Nombre del Producto"
             value={nombre}
-            onChange={(e) => cambiarInput('nombre', e.target.value)}
+            onChange={(e) => actualizarCampo('nombre', e.target.value)}
             error={!!errores.nombre}
             helperText={errores.nombre || `${nombre.length}/30 caracteres`}
             fullWidth
