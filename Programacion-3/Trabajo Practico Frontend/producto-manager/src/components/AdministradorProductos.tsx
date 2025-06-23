@@ -18,7 +18,7 @@ const gradientBackground = {
   alignItems: 'center',
   justifyContent: 'center',
   py: 4,
-  position: 'fixed' as const,
+  position: 'fixed' as const, //se usa as const ya que sino lo toma como tipo string
   top: 0,
   left: 0
 };
@@ -37,7 +37,7 @@ export default function AdministradorProductos() {
     cerrar();
   };
   const clickBorrar = (id: string) => {
-    const producto = productos.find(p => p.id === id);
+    const producto = productos.find(producto => producto.id === id);
     if (producto) {
       setProductoABorrar(producto);
     }
@@ -47,6 +47,7 @@ export default function AdministradorProductos() {
     if (productoABorrar) {
       borrarProducto(productoABorrar.id);
       setProductoABorrar(null);
+      // null porque sino el modal estariaabierto y el producto quedaria en memoria
     }
   };
 
@@ -72,7 +73,7 @@ export default function AdministradorProductos() {
         <Box sx={containerWidth}>
           {productos.length === 0 ? (
             <Alert severity="info" sx={{ backgroundColor: 'rgba(255,255,255,0.9)', fontSize: '1.1rem', borderRadius: 2, boxShadow: 2 }}>
-              No tienes productos en tu inventario.
+              No hay productos en este momento.
             </Alert>
           ) : (
             <TablaProductos productos={productos} alEditar={abrirEditar} alBorrar={clickBorrar} />
